@@ -1,0 +1,404 @@
+2017-12-07 08:31:15,871 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = wq
+string qbXMLCountry = VF
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-07 08:31:15,911 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005
+2017-12-07 08:31:20,608 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 1
+2017-12-07 08:31:38,631 [5] INFO  FCQBWebConnAPI.Model.Payment.QBPaymentAddRqModel [(null)] – Log debtorNo =800020FF-1457349121
+2017-12-07 08:32:36,882 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] –  arraylst count:0
+ RequestXML to QB = --++-- 
+
+2017-12-07 08:32:36,889 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – 
+ RequestXML to QB = --++-- 
+
+2017-12-07 08:34:43,005 [12] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = sa
+string qbXMLCountry = NG
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-07 08:34:43,043 [12] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005
+2017-12-07 08:34:44,962 [12] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 1
+2017-12-07 08:34:52,255 [12] INFO  FCQBWebConnAPI.Model.Payment.QBPaymentAddRqModel [(null)] – Log debtorNo =800020FF-1457349121
+2017-12-07 08:35:33,827 [12] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] –  arraylst count:1
+ RequestXML to QB = --++-- 
+
+2017-12-07 08:35:43,998 [12] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – [Session '5lndi5obtjkqtx2zm53jntii'] with ticket id : 201712011057080000005 (counter: 1)
+2017-12-07 08:35:47,806 [12] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – sending request no = 1
+
+ RequestXML to QB = --+<?xml version="1.0" encoding="utf-8"?>
+<?qbxml version="5.0"?><QBXML>
+  <QBXMLMsgsRq onError="stopOnError">
+    <ReceivePaymentAddRq>
+      <ReceivePaymentAdd>
+        <CustomerRef>
+          <ListID>800020FF-1457349121</ListID>
+        </CustomerRef>
+        <TxnDate>2017-10-23</TxnDate>
+        <RefNumber>0</RefNumber>
+        <TotalAmount>0</TotalAmount>
+        <PaymentMethodRef>
+          <FullName>Cash</FullName>
+        </PaymentMethodRef>
+        <Memo>FCC-LAG-01</Memo>
+      </ReceivePaymentAdd>
+    </ReceivePaymentAddRq>
+  </QBXMLMsgsRq>
+</QBXML>+-- 
+
+2017-12-07 08:48:33,948 [7] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = fasa
+string qbXMLCountry = CD
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-07 08:48:33,983 [7] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005
+2017-12-07 08:48:42,695 [7] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 1
+2017-12-07 08:48:50,965 [7] INFO  FCQBWebConnAPI.Model.Payment.QBPaymentAddRqModel [(null)] – Log debtorNo =800020FF-1457349121
+2017-12-07 08:48:53,966 [7] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] –  arraylst count:1
+ RequestXML to QB = --++-- 
+
+2017-12-07 08:48:53,977 [7] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – [Session 'gt5q1j3ogsxfscvv4fqlrryy'] with ticket id : 201712011057080000005 (counter: 1)
+2017-12-07 08:48:53,986 [7] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – sending request no = 1
+
+ RequestXML to QB = --+<?xml version="1.0" encoding="utf-8"?>
+<?qbxml version="5.0"?><QBXML>
+  <QBXMLMsgsRq onError="stopOnError">
+    <ReceivePaymentAddRq>
+      <ReceivePaymentAdd>
+        <CustomerRef>
+          <ListID>800020FF-1457349121</ListID>
+        </CustomerRef>
+        <TxnDate>2017-10-23</TxnDate>
+        <RefNumber>0</RefNumber>
+        <TotalAmount>11500</TotalAmount>
+        <PaymentMethodRef>
+          <FullName>Cash</FullName>
+        </PaymentMethodRef>
+        <Memo>FCC-LAG-01</Memo>
+      </ReceivePaymentAdd>
+    </ReceivePaymentAddRq>
+  </QBXMLMsgsRq>
+</QBXML>+-- 
+
+2017-12-07 09:07:18,919 [13] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = DC
+string qbXMLCountry = aw
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-07 09:07:18,948 [13] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005
+2017-12-07 09:07:20,709 [13] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 1
+2017-12-07 09:07:22,051 [13] INFO  FCQBWebConnAPI.Model.Payment.QBPaymentAddRqModel [(null)] – Log debtorNo =800020FF-1457349121
+2017-12-07 09:07:26,960 [13] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] –  arraylst count:1
+ RequestXML to QB = --++-- 
+
+2017-12-07 09:07:26,968 [13] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – [Session 'e4l4b5kz5cwoyp1pdrouvvge'] with ticket id : 201712011057080000005 (counter: 1)
+2017-12-07 09:07:26,977 [13] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – sending request no = 1
+
+ RequestXML to QB = --+<?xml version="1.0" encoding="utf-8"?>
+<?qbxml version="5.0"?><QBXML>
+  <QBXMLMsgsRq onError="stopOnError">
+    <ReceivePaymentAddRq>
+      <ReceivePaymentAdd>
+        <CustomerRef>
+          <ListID>800020FF-1457349121</ListID>
+        </CustomerRef>
+        <TxnDate>2017-10-23</TxnDate>
+        <RefNumber>0</RefNumber>
+        <TotalAmount>11500</TotalAmount>
+        <PaymentMethodRef>
+          <FullName>Cash</FullName>
+        </PaymentMethodRef>
+        <Memo>FCC-LAG-01</Memo>
+        <IsAutoApply>true</IsAutoApply>
+      </ReceivePaymentAdd>
+    </ReceivePaymentAddRq>
+  </QBXMLMsgsRq>
+</QBXML>+-- 
+
+2017-12-07 11:43:02,693 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = wq
+string qbXMLCountry = DC
+int qbXMLMajorVers = 0
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-07 11:43:02,724 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005
+2017-12-07 11:43:06,899 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 1
+2017-12-07 11:51:35,747 [6] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = df
+string qbXMLCountry = vd
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-07 11:51:35,788 [6] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005
+2017-12-07 11:51:50,348 [6] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 1
+2017-12-07 12:02:07,767 [4] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = ss
+string qbXMLCountry = ss
+int qbXMLMajorVers = 0
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-07 12:02:07,792 [4] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005
+2017-12-07 12:02:09,624 [4] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 1
+2017-12-07 12:07:45,410 [12] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = dd
+string qbXMLCountry = dd
+int qbXMLMajorVers = 0
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-07 12:07:45,435 [12] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005
+2017-12-07 12:07:47,732 [12] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 1
+2017-12-07 12:11:34,166 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = ee
+string qbXMLCountry = ee
+int qbXMLMajorVers = 0
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-07 12:11:34,200 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005
+2017-12-07 12:11:36,888 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 1
+2017-12-07 12:12:22,119 [5] INFO  FCQBWebConnAPI.JobHelper [(null)] – logged new job with new ticket id :071220171212068270
+2017-12-07 12:12:58,940 [5] INFO  FCQBWebConnAPI.Model.Payment.QBPaymentAddRqModel [(null)] – PaymentAdd: cannot find trans and ListID with transid  9046 in eclinic DB. returning empty XML
+2017-12-07 12:13:27,959 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] –  arraylst count:0
+ RequestXML to QB = --++-- 
+
+2017-12-07 12:13:27,970 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – 
+ RequestXML to QB = --++-- 
+
+2017-12-07 12:16:42,562 [7] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 071220171212068270
+string strCompanyFileName = ds
+string qbXMLCountry = df
+int qbXMLMajorVers = 0
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:071220171212068270
+
+2017-12-07 12:16:42,595 [7] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 071220171212068270
+2017-12-07 12:16:48,081 [7] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 1
+2017-12-07 12:18:11,083 [7] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] –  arraylst count:1
+ RequestXML to QB = --++-- 
+
+2017-12-07 12:18:11,092 [7] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – [Session 'qdm451t2ckn1jlaianem3gf2'] with ticket id : 071220171212068270 (counter: 1)
+2017-12-07 12:18:11,098 [7] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – sending request no = 1
+
+ RequestXML to QB = --+<?xml version="1.0" encoding="utf-8"?>
+<?qbxml version="5.0"?><QBXML>
+  <QBXMLMsgsRq onError="stopOnError">
+    <CustomerAddRq requestID="1395">
+      <CustomerAdd>
+        <Name>Abudu</Name>
+        <IsActive>true</IsActive>
+        <Salutation />
+        <FirstName>Ajibola</FirstName>
+        <MiddleName>K</MiddleName>
+        <LastName>Abudu</LastName>
+        <BillAddress>
+          <Addr1>1, Jane Doe Close</Addr1>
+          <City>Ikoyi</City>
+          <State>Lagos</State>
+          <PostalCode>23401</PostalCode>
+        </BillAddress>
+        <Phone>08034709727,08023165587</Phone>
+        <Email>jabudu@mac.com</Email>
+        <Contact>Mrs Abudu</Contact>
+      </CustomerAdd>
+    </CustomerAddRq>
+  </QBXMLMsgsRq>
+</QBXML>+-- 
+
+2017-12-07 22:27:51,499 [3] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: receiveResponseXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 071220171225204484
+string responseXML from QB = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="1395" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CustomerRet>
+<ListID>800028BB-1512682011</ListID>
+<TimeCreated>2017-12-07T22:26:51+01:00</TimeCreated>
+<TimeModified>2017-12-07T22:26:51+01:00</TimeModified>
+<EditSequence>1512682011</EditSequence>
+<Name>Abudu</Name>
+<FullName>Abudu</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<FirstName>Ajibola</FirstName>
+<MiddleName>K</MiddleName>
+<LastName>Abudu</LastName>
+<BillAddress>
+<Addr1>1, Jane Doe Close</Addr1>
+<City>Ikoyi</City>
+<State>Lagos</State>
+<PostalCode>23401</PostalCode>
+</BillAddress>
+<Phone>08034709727</Phone>
+<Email>jabudu@mac.com</Email>
+<Contact>Mrs Abudu</Contact>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<JobStatus>None</JobStatus>
+</CustomerRet>
+</CustomerAddRs>
+</QBXMLMsgsRs>
+</QBXML>+--
+string hresult = 
+string message = 
+
+
+2017-12-07 22:28:59,841 [3] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – Error in receiveResponseXML :   at FCQBWebConnAPI.QBWebConnSvcSoap.receiveResponseXML(receiveResponseXMLRequest request) in C:\LaoluOlapegba\Myprojects\femi\FCWBWebConnSvc\FCWBWebConnSvc\QBWebConnSvcSoap.svc.cs:line 338
+2017-12-07 22:28:59,875 [3] ERROR FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at FCQBWebConnAPI.QBWebConnSvcSoap.receiveResponseXML(receiveResponseXMLRequest request) in C:\LaoluOlapegba\Myprojects\femi\FCWBWebConnSvc\FCWBWebConnSvc\QBWebConnSvcSoap.svc.cs:line 338
+2017-12-07 22:29:23,278 [3] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: receiveResponseXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 071220171225204484
+string responseXML from QB = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="1395" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CustomerRet>
+<ListID>800028BB-1512682011</ListID>
+<TimeCreated>2017-12-07T22:26:51+01:00</TimeCreated>
+<TimeModified>2017-12-07T22:26:51+01:00</TimeModified>
+<EditSequence>1512682011</EditSequence>
+<Name>Abudu</Name>
+<FullName>Abudu</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<FirstName>Ajibola</FirstName>
+<MiddleName>K</MiddleName>
+<LastName>Abudu</LastName>
+<BillAddress>
+<Addr1>1, Jane Doe Close</Addr1>
+<City>Ikoyi</City>
+<State>Lagos</State>
+<PostalCode>23401</PostalCode>
+</BillAddress>
+<Phone>08034709727</Phone>
+<Email>jabudu@mac.com</Email>
+<Contact>Mrs Abudu</Contact>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<JobStatus>None</JobStatus>
+</CustomerRet>
+</CustomerAddRs>
+</QBXMLMsgsRs>
+</QBXML>+--
+string hresult = 
+string message = 
+
+
+2017-12-07 22:30:53,762 [3] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – Error in receiveResponseXML :   at FCQBWebConnAPI.QBWebConnSvcSoap.receiveResponseXML(receiveResponseXMLRequest request) in C:\LaoluOlapegba\Myprojects\femi\FCWBWebConnSvc\FCWBWebConnSvc\QBWebConnSvcSoap.svc.cs:line 338
+2017-12-07 22:30:53,769 [3] ERROR FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at FCQBWebConnAPI.QBWebConnSvcSoap.receiveResponseXML(receiveResponseXMLRequest request) in C:\LaoluOlapegba\Myprojects\femi\FCWBWebConnSvc\FCWBWebConnSvc\QBWebConnSvcSoap.svc.cs:line 338
+2017-12-07 22:34:34,672 [3] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: receiveResponseXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 071220171212068270
+string responseXML from QB = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="1395" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CustomerRet>
+<ListID>800028BB-1512682011</ListID>
+<TimeCreated>2017-12-07T22:26:51+01:00</TimeCreated>
+<TimeModified>2017-12-07T22:26:51+01:00</TimeModified>
+<EditSequence>1512682011</EditSequence>
+<Name>Abudu</Name>
+<FullName>Abudu</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<FirstName>Ajibola</FirstName>
+<MiddleName>K</MiddleName>
+<LastName>Abudu</LastName>
+<BillAddress>
+<Addr1>1, Jane Doe Close</Addr1>
+<City>Ikoyi</City>
+<State>Lagos</State>
+<PostalCode>23401</PostalCode>
+</BillAddress>
+<Phone>08034709727</Phone>
+<Email>jabudu@mac.com</Email>
+<Contact>Mrs Abudu</Contact>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<JobStatus>None</JobStatus>
+</CustomerRet>
+</CustomerAddRs>
+</QBXMLMsgsRs>
+</QBXML>+--
+string hresult = 
+string message = 
+
+
+2017-12-07 22:37:52,590 [3] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – Error in receiveResponseXML :   at System.Data.Entity.Core.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   at System.Data.Entity.Core.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClassa.<Attach>b__9()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   at System.Data.Entity.DbSet`1.Attach(TEntity entity)
+   at FCQBWebConnAPI.QBWebConnSvcSoap.UpdateQJobStatus(String ticketId, Int32 statusCode, String statusDesc, String qbIdentifier) in C:\LaoluOlapegba\Myprojects\femi\FCWBWebConnSvc\FCWBWebConnSvc\QBWebConnSvcSoap.svc.cs:line 811
+   at FCQBWebConnAPI.QBWebConnSvcSoap.receiveResponseXML(receiveResponseXMLRequest request) in C:\LaoluOlapegba\Myprojects\femi\FCWBWebConnSvc\FCWBWebConnSvc\QBWebConnSvcSoap.svc.cs:line 389
+2017-12-07 22:37:52,598 [3] ERROR FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – 
+System.InvalidOperationException: Attaching an entity of type 'FCQB.Data.qb_jobs' failed because another entity of the same type already has the same primary key value. This can happen when using the 'Attach' method or setting the state of an entity to 'Unchanged' or 'Modified' if any entities in the graph have conflicting key values. This may be because some entities are new and have not yet received database-generated key values. In this case use the 'Add' method or the 'Added' entity state to track the graph and then set the state of non-new entities to 'Unchanged' or 'Modified' as appropriate.
+   at System.Data.Entity.Core.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   at System.Data.Entity.Core.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClassa.<Attach>b__9()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   at System.Data.Entity.DbSet`1.Attach(TEntity entity)
+   at FCQBWebConnAPI.QBWebConnSvcSoap.UpdateQJobStatus(String ticketId, Int32 statusCode, String statusDesc, String qbIdentifier) in C:\LaoluOlapegba\Myprojects\femi\FCWBWebConnSvc\FCWBWebConnSvc\QBWebConnSvcSoap.svc.cs:line 811
+   at FCQBWebConnAPI.QBWebConnSvcSoap.receiveResponseXML(receiveResponseXMLRequest request) in C:\LaoluOlapegba\Myprojects\femi\FCWBWebConnSvc\FCWBWebConnSvc\QBWebConnSvcSoap.svc.cs:line 389

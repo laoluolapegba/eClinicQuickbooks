@@ -1,0 +1,1709 @@
+2017-08-06 17:02:01,020 [64] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – [Session 'vo1d5li5lt0a1iozs0pixj0f'] with ticket id : 22:25:58.435234 (counter: 1)
+2017-08-06 17:02:01,063 [64] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435234
+string strHCPResponse = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<HostQueryRs requestID="0" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<HostRet>
+<ProductName>QuickBooks Pro 2016</ProductName>
+<MajorVersion>26</MajorVersion>
+<MinorVersion>0</MinorVersion>
+<Country>US</Country>
+<SupportedQBXMLVersion>1.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>1.1</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>2.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>2.1</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>3.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>4.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>4.1</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>5.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>6.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>7.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>8.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>9.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>10.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>11.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>12.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>13.0</SupportedQBXMLVersion>
+<IsAutomaticLogin>false</IsAutomaticLogin>
+<QBFileMode>SingleUser</QBFileMode>
+</HostRet>
+</HostQueryRs>
+<CompanyQueryRs requestID="1" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CompanyRet>
+<IsSampleCompany>false</IsSampleCompany>
+<CompanyName>Techrunch Solution Ltd</CompanyName>
+<LegalCompanyName>Techrunch Solution Ltd</LegalCompanyName>
+<Address>
+<City>plot 41, beckley estate, abule-</City>
+<State>SC</State>
+<PostalCode>23401</PostalCode>
+<Country>UK</Country>
+</Address>
+<AddressBlock>
+<Addr1>plot 41, beckley estate, abule-egba Lagos</Addr1>
+<Addr2>SC 23401</Addr2>
+</AddressBlock>
+<LegalAddress>
+<Addr1>plot 41, beckley estate, abule-egba Lagos</Addr1>
+<City>Lagos</City>
+<State>SC</State>
+<PostalCode>23401</PostalCode>
+<Country>US</Country>
+</LegalAddress>
+<Phone>80213121</Phone>
+<FirstMonthFiscalYear>January</FirstMonthFiscalYear>
+<FirstMonthIncomeTaxYear>January</FirstMonthIncomeTaxYear>
+<CompanyType>InformationTechnologyComputersSoftware</CompanyType>
+<SSN>123-45-6789</SSN>
+<TaxForm>Form1120</TaxForm>
+<SubscribedServices>
+<Service>
+<Name>QuickBooks Online Banking</Name>
+<Domain>banking.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing</Name>
+<Domain>billing.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing Level 1 Service</Name>
+<Domain>qbob1.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing Level 2 Service</Name>
+<Domain>qbob2.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing Payment Service</Name>
+<Domain>qbobpay.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Bill Payment</Name>
+<Domain>billpay.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing Paper Mailing Service</Name>
+<Domain>qbobpaper.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Payroll Service</Name>
+<Domain>payroll.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Basic Payroll Service</Name>
+<Domain>payrollbsc.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Basic Disk Payroll Service</Name>
+<Domain>payrollbscdisk.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Deluxe Payroll Service</Name>
+<Domain>payrolldlx.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Premier Payroll Service</Name>
+<Domain>payrollprm.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>Basic Plus Federal</Name>
+<Domain>basic_plus_fed.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>Basic Plus Federal and State</Name>
+<Domain>basic_plus_fed_state.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>Basic Plus Direct Deposit</Name>
+<Domain>basic_plus_dd.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>Merchant Account Service</Name>
+<Domain>mas.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+</SubscribedServices>
+<AccountantCopy>
+<AccountantCopyExists>false</AccountantCopyExists>
+</AccountantCopy>
+<DataExtRet>
+<OwnerID>{57F3B9B1-86F1-4fcc-B1EE-566DE1813D20}</OwnerID>
+<DataExtName>AppLock</DataExtName>
+<DataExtType>STR255TYPE</DataExtType>
+<DataExtValue>LOCKED:BLUECHIP-PC:636376321177304834</DataExtValue>
+</DataExtRet>
+<DataExtRet>
+<OwnerID>{57F3B9B1-86F1-4fcc-B1EE-566DE1813D20}</OwnerID>
+<DataExtName>FileID</DataExtName>
+<DataExtType>STR255TYPE</DataExtType>
+<DataExtValue>{90A44FB5-33D9-4815-AC85-BC87A7E7D1EB}</DataExtValue>
+</DataExtRet>
+</CompanyRet>
+</CompanyQueryRs>
+<PreferencesQueryRs requestID="2" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<PreferencesRet>
+<AccountingPreferences>
+<IsUsingAccountNumbers>false</IsUsingAccountNumbers>
+<IsRequiringAccounts>true</IsRequiringAccounts>
+<IsUsingClassTracking>false</IsUsingClassTracking>
+<IsUsingAuditTrail>true</IsUsingAuditTrail>
+<IsAssigningJournalEntryNumbers>true</IsAssigningJournalEntryNumbers>
+</AccountingPreferences>
+<FinanceChargePreferences>
+<AnnualInterestRate>0.00</AnnualInterestRate>
+<MinFinanceCharge>0.00</MinFinanceCharge>
+<GracePeriod>0</GracePeriod>
+<IsAssessingForOverdueCharges>false</IsAssessingForOverdueCharges>
+<CalculateChargesFrom>DueDate</CalculateChargesFrom>
+<IsMarkedToBePrinted>false</IsMarkedToBePrinted>
+</FinanceChargePreferences>
+<JobsAndEstimatesPreferences>
+<IsUsingEstimates>true</IsUsingEstimates>
+<IsUsingProgressInvoicing>false</IsUsingProgressInvoicing>
+<IsPrintingItemsWithZeroAmounts>false</IsPrintingItemsWithZeroAmounts>
+</JobsAndEstimatesPreferences>
+<MultiCurrencyPreferences>
+<IsMultiCurrencyOn>false</IsMultiCurrencyOn>
+</MultiCurrencyPreferences>
+<MultiLocationInventoryPreferences>
+<IsMultiLocationInventoryAvailable>false</IsMultiLocationInventoryAvailable>
+<IsMultiLocationInventoryEnabled>false</IsMultiLocationInventoryEnabled>
+</MultiLocationInventoryPreferences>
+<PurchasesAndVendorsPreferences>
+<IsUsingInventory>false</IsUsingInventory>
+<DaysBillsAreDue>10</DaysBillsAreDue>
+<IsAutomaticallyUsingDiscounts>false</IsAutomaticallyUsingDiscounts>
+</PurchasesAndVendorsPreferences>
+<ReportsPreferences>
+<AgingReportBasis>AgeFromDueDate</AgingReportBasis>
+<SummaryReportBasis>Accrual</SummaryReportBasis>
+</ReportsPreferences>
+<SalesAndCustomersPreferences>
+<IsTrackingReimbursedExpensesAsIncome>false</IsTrackingReimbursedExpensesAsIncome>
+<IsAutoApplyingPayments>true</IsAutoApplyingPayments>
+<PriceLevels>
+<IsUsingPriceLevels>true</IsUsingPriceLevels>
+<IsRoundingSalesPriceUp>true</IsRoundingSalesPriceUp>
+</PriceLevels>
+</SalesAndCustomersPreferences>
+<TimeTrackingPreferences>
+<FirstDayOfWeek>Monday</FirstDayOfWeek>
+</TimeTrackingPreferences>
+<CurrentAppAccessRights>
+<IsAutomaticLoginAllowed>true</IsAutomaticLoginAllowed>
+<AutomaticLoginUserName>eclinic</AutomaticLoginUserName>
+<IsPersonalDataAccessAllowed>false</IsPersonalDataAccessAllowed>
+</CurrentAppAccessRights>
+<ItemsAndInventoryPreferences>
+<EnhancedInventoryReceivingEnabled>false</EnhancedInventoryReceivingEnabled>
+<IsTrackingSerialOrLotNumber>None</IsTrackingSerialOrLotNumber>
+<FIFOEnabled>false</FIFOEnabled>
+<IsRSBEnabled>false</IsRSBEnabled>
+<IsBarcodeEnabled>false</IsBarcodeEnabled>
+</ItemsAndInventoryPreferences>
+</PreferencesRet>
+</PreferencesQueryRs>
+</QBXMLMsgsRs>
+</QBXML>
++--
+string strCompanyFileName = C:\Users\Public\Documents\Intuit\QuickBooks\Company Files\Techrunch Solution Ltd.qbw
+string qbXMLCountry = US
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+sending request no = 1
+
+Return values: 
+ requestXML to = --+<?xml version="1.0" encoding="utf-8"?>
+<?qbxml version="2.0"?><QBXML>
+  <QBXMLMsgsRq onError="stopOnError">
+    <CustomerAddRq requestID="3">
+      <CustomerAdd>
+        <Name>Orimoloye</Name>
+        <IsActive>true</IsActive>
+        <Salutation>Mr</Salutation>
+        <FirstName>C</FirstName>
+        <MiddleName>L</MiddleName>
+        <LastName>Orimoloye</LastName>
+        <BillAddress>
+          <Addr1>1, Jane Doe Close</Addr1>
+          <City>Ikoyi</City>
+          <State>Lagos</State>
+          <PostalCode>23401</PostalCode>
+        </BillAddress>
+        <Phone>08033646203</Phone>
+        <Email>lake@gmail.com</Email>
+      </CustomerAdd>
+    </CustomerAddRq>
+  </QBXMLMsgsRq>
+</QBXML>+-- 
+
+2017-08-06 17:02:02,378 [67] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: receiveResponseXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435234
+string responseXML from QB = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="3" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CustomerRet>
+<ListID>80000003-1502035321</ListID>
+<TimeCreated>2017-08-06T17:02:01+01:00</TimeCreated>
+<TimeModified>2017-08-06T17:02:01+01:00</TimeModified>
+<EditSequence>1502035321</EditSequence>
+<Name>Orimoloye</Name>
+<FullName>Orimoloye</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<Salutation>Mr</Salutation>
+<FirstName>C</FirstName>
+<MiddleName>L</MiddleName>
+<LastName>Orimoloye</LastName>
+<BillAddress>
+<Addr1>1, Jane Doe Close</Addr1>
+<City>Ikoyi</City>
+<State>Lagos</State>
+<PostalCode>23401</PostalCode>
+</BillAddress>
+<Phone>08033646203</Phone>
+<Email>lake@gmail.com</Email>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<JobStatus>None</JobStatus>
+</CustomerRet>
+</CustomerAddRs>
+</QBXMLMsgsRs>
+</QBXML>
++--
+string hresult = 
+string message = 
+
+Response received = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="3" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CustomerRet>
+<ListID>80000003-1502035321</ListID>
+<TimeCreated>2017-08-06T17:02:01+01:00</TimeCreated>
+<TimeModified>2017-08-06T17:02:01+01:00</TimeModified>
+<EditSequence>1502035321</EditSequence>
+<Name>Orimoloye</Name>
+<FullName>Orimoloye</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<Salutation>Mr</Salutation>
+<FirstName>C</FirstName>
+<MiddleName>L</MiddleName>
+<LastName>Orimoloye</LastName>
+<BillAddress>
+<Addr1>1, Jane Doe Close</Addr1>
+<City>Ikoyi</City>
+<State>Lagos</State>
+<PostalCode>23401</PostalCode>
+</BillAddress>
+<Phone>08033646203</Phone>
+<Email>lake@gmail.com</Email>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<JobStatus>None</JobStatus>
+</CustomerRet>
+</CustomerAddRs>
+</QBXMLMsgsRs>
+</QBXML>
++--
+
+2017-08-06 17:02:02,661 [67] ERROR FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – 
+MySql.Data.Types.MySqlConversionException: Unable to convert MySQL date/time value to System.DateTime
+   at MySql.Data.Types.MySqlDateTime.GetDateTime()
+   at MySql.Data.Types.MySqlDateTime.System.IConvertible.ToDateTime(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at MySql.Data.Entity.EFMySqlDataReader.ChangeType(Object sourceValue, Type targetType)
+   at MySql.Data.Entity.EFMySqlDataReader.GetValue(Int32 ordinal)
+   at System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetUntypedValueDefault(DbDataReader reader, Int32 ordinal)
+   at System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   at System.Data.Entity.Core.Common.Internal.Materialization.Shaper.GetPropertyValueWithErrorHandling[TProperty](Int32 ordinal, String propertyName, String typeName)
+   at lambda_method(Closure , Shaper )
+   at System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   at lambda_method(Closure , Shaper )
+   at System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   at System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at FCQBWebConnAPI.QBWebConnSvcSoap.UpdateCustomerAddJob(String ticketId) in F:\LaoluOlapegba\Myprojects\femi\FCWBWebConnSvc\FCWBWebConnSvc\QBWebConnSvcSoap.svc.cs:line 423
+   at FCQBWebConnAPI.QBWebConnSvcSoap.receiveResponseXML(receiveResponseXMLRequest request) in F:\LaoluOlapegba\Myprojects\femi\FCWBWebConnSvc\FCWBWebConnSvc\QBWebConnSvcSoap.svc.cs:line 367
+2017-08-06 17:02:03,850 [70] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: closeConnection() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435234
+
+
+Return values: 
+string retVal= OK
+
+2017-08-06 17:03:41,997 [70] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – [Session 'tbhy24odtguqptvr1b3wgvau'] with ticket id : 22:25:58.435234 (counter: 1)
+2017-08-06 17:03:42,016 [70] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435234
+string strHCPResponse = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<HostQueryRs requestID="0" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<HostRet>
+<ProductName>QuickBooks Pro 2016</ProductName>
+<MajorVersion>26</MajorVersion>
+<MinorVersion>0</MinorVersion>
+<Country>US</Country>
+<SupportedQBXMLVersion>1.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>1.1</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>2.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>2.1</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>3.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>4.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>4.1</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>5.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>6.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>7.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>8.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>9.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>10.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>11.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>12.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>13.0</SupportedQBXMLVersion>
+<IsAutomaticLogin>false</IsAutomaticLogin>
+<QBFileMode>SingleUser</QBFileMode>
+</HostRet>
+</HostQueryRs>
+<CompanyQueryRs requestID="1" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CompanyRet>
+<IsSampleCompany>false</IsSampleCompany>
+<CompanyName>Techrunch Solution Ltd</CompanyName>
+<LegalCompanyName>Techrunch Solution Ltd</LegalCompanyName>
+<Address>
+<City>plot 41, beckley estate, abule-</City>
+<State>SC</State>
+<PostalCode>23401</PostalCode>
+<Country>UK</Country>
+</Address>
+<AddressBlock>
+<Addr1>plot 41, beckley estate, abule-egba Lagos</Addr1>
+<Addr2>SC 23401</Addr2>
+</AddressBlock>
+<LegalAddress>
+<Addr1>plot 41, beckley estate, abule-egba Lagos</Addr1>
+<City>Lagos</City>
+<State>SC</State>
+<PostalCode>23401</PostalCode>
+<Country>US</Country>
+</LegalAddress>
+<Phone>80213121</Phone>
+<FirstMonthFiscalYear>January</FirstMonthFiscalYear>
+<FirstMonthIncomeTaxYear>January</FirstMonthIncomeTaxYear>
+<CompanyType>InformationTechnologyComputersSoftware</CompanyType>
+<SSN>123-45-6789</SSN>
+<TaxForm>Form1120</TaxForm>
+<SubscribedServices>
+<Service>
+<Name>QuickBooks Online Banking</Name>
+<Domain>banking.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing</Name>
+<Domain>billing.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing Level 1 Service</Name>
+<Domain>qbob1.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing Level 2 Service</Name>
+<Domain>qbob2.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing Payment Service</Name>
+<Domain>qbobpay.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Bill Payment</Name>
+<Domain>billpay.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing Paper Mailing Service</Name>
+<Domain>qbobpaper.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Payroll Service</Name>
+<Domain>payroll.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Basic Payroll Service</Name>
+<Domain>payrollbsc.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Basic Disk Payroll Service</Name>
+<Domain>payrollbscdisk.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Deluxe Payroll Service</Name>
+<Domain>payrolldlx.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Premier Payroll Service</Name>
+<Domain>payrollprm.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>Basic Plus Federal</Name>
+<Domain>basic_plus_fed.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>Basic Plus Federal and State</Name>
+<Domain>basic_plus_fed_state.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>Basic Plus Direct Deposit</Name>
+<Domain>basic_plus_dd.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>Merchant Account Service</Name>
+<Domain>mas.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+</SubscribedServices>
+<AccountantCopy>
+<AccountantCopyExists>false</AccountantCopyExists>
+</AccountantCopy>
+<DataExtRet>
+<OwnerID>{57F3B9B1-86F1-4fcc-B1EE-566DE1813D20}</OwnerID>
+<DataExtName>AppLock</DataExtName>
+<DataExtType>STR255TYPE</DataExtType>
+<DataExtValue>LOCKED:BLUECHIP-PC:636376322195343063</DataExtValue>
+</DataExtRet>
+<DataExtRet>
+<OwnerID>{57F3B9B1-86F1-4fcc-B1EE-566DE1813D20}</OwnerID>
+<DataExtName>FileID</DataExtName>
+<DataExtType>STR255TYPE</DataExtType>
+<DataExtValue>{90A44FB5-33D9-4815-AC85-BC87A7E7D1EB}</DataExtValue>
+</DataExtRet>
+</CompanyRet>
+</CompanyQueryRs>
+<PreferencesQueryRs requestID="2" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<PreferencesRet>
+<AccountingPreferences>
+<IsUsingAccountNumbers>false</IsUsingAccountNumbers>
+<IsRequiringAccounts>true</IsRequiringAccounts>
+<IsUsingClassTracking>false</IsUsingClassTracking>
+<IsUsingAuditTrail>true</IsUsingAuditTrail>
+<IsAssigningJournalEntryNumbers>true</IsAssigningJournalEntryNumbers>
+</AccountingPreferences>
+<FinanceChargePreferences>
+<AnnualInterestRate>0.00</AnnualInterestRate>
+<MinFinanceCharge>0.00</MinFinanceCharge>
+<GracePeriod>0</GracePeriod>
+<IsAssessingForOverdueCharges>false</IsAssessingForOverdueCharges>
+<CalculateChargesFrom>DueDate</CalculateChargesFrom>
+<IsMarkedToBePrinted>false</IsMarkedToBePrinted>
+</FinanceChargePreferences>
+<JobsAndEstimatesPreferences>
+<IsUsingEstimates>true</IsUsingEstimates>
+<IsUsingProgressInvoicing>false</IsUsingProgressInvoicing>
+<IsPrintingItemsWithZeroAmounts>false</IsPrintingItemsWithZeroAmounts>
+</JobsAndEstimatesPreferences>
+<MultiCurrencyPreferences>
+<IsMultiCurrencyOn>false</IsMultiCurrencyOn>
+</MultiCurrencyPreferences>
+<MultiLocationInventoryPreferences>
+<IsMultiLocationInventoryAvailable>false</IsMultiLocationInventoryAvailable>
+<IsMultiLocationInventoryEnabled>false</IsMultiLocationInventoryEnabled>
+</MultiLocationInventoryPreferences>
+<PurchasesAndVendorsPreferences>
+<IsUsingInventory>false</IsUsingInventory>
+<DaysBillsAreDue>10</DaysBillsAreDue>
+<IsAutomaticallyUsingDiscounts>false</IsAutomaticallyUsingDiscounts>
+</PurchasesAndVendorsPreferences>
+<ReportsPreferences>
+<AgingReportBasis>AgeFromDueDate</AgingReportBasis>
+<SummaryReportBasis>Accrual</SummaryReportBasis>
+</ReportsPreferences>
+<SalesAndCustomersPreferences>
+<IsTrackingReimbursedExpensesAsIncome>false</IsTrackingReimbursedExpensesAsIncome>
+<IsAutoApplyingPayments>true</IsAutoApplyingPayments>
+<PriceLevels>
+<IsUsingPriceLevels>true</IsUsingPriceLevels>
+<IsRoundingSalesPriceUp>true</IsRoundingSalesPriceUp>
+</PriceLevels>
+</SalesAndCustomersPreferences>
+<TimeTrackingPreferences>
+<FirstDayOfWeek>Monday</FirstDayOfWeek>
+</TimeTrackingPreferences>
+<CurrentAppAccessRights>
+<IsAutomaticLoginAllowed>true</IsAutomaticLoginAllowed>
+<AutomaticLoginUserName>eclinic</AutomaticLoginUserName>
+<IsPersonalDataAccessAllowed>false</IsPersonalDataAccessAllowed>
+</CurrentAppAccessRights>
+<ItemsAndInventoryPreferences>
+<EnhancedInventoryReceivingEnabled>false</EnhancedInventoryReceivingEnabled>
+<IsTrackingSerialOrLotNumber>None</IsTrackingSerialOrLotNumber>
+<FIFOEnabled>false</FIFOEnabled>
+<IsRSBEnabled>false</IsRSBEnabled>
+<IsBarcodeEnabled>false</IsBarcodeEnabled>
+</ItemsAndInventoryPreferences>
+</PreferencesRet>
+</PreferencesQueryRs>
+</QBXMLMsgsRs>
+</QBXML>
++--
+string strCompanyFileName = C:\Users\Public\Documents\Intuit\QuickBooks\Company Files\Techrunch Solution Ltd.qbw
+string qbXMLCountry = US
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+sending request no = 1
+
+Return values: 
+ requestXML to = --+<?xml version="1.0" encoding="utf-8"?>
+<?qbxml version="2.0"?><QBXML>
+  <QBXMLMsgsRq onError="stopOnError">
+    <CustomerAddRq requestID="3">
+      <CustomerAdd>
+        <Name>Orimoloye</Name>
+        <IsActive>true</IsActive>
+        <Salutation>Mr</Salutation>
+        <FirstName>C</FirstName>
+        <MiddleName>L</MiddleName>
+        <LastName>Orimoloye</LastName>
+        <BillAddress>
+          <Addr1>1, Jane Doe Close</Addr1>
+          <City>Ikoyi</City>
+          <State>Lagos</State>
+          <PostalCode>23401</PostalCode>
+        </BillAddress>
+        <Phone>08033646203</Phone>
+        <Email>lake@gmail.com</Email>
+      </CustomerAdd>
+    </CustomerAddRq>
+  </QBXMLMsgsRq>
+</QBXML>+-- 
+
+2017-08-06 17:03:42,472 [70] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: receiveResponseXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435234
+string responseXML from QB = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="3" statusCode="3100" statusSeverity="Error" statusMessage="The name &quot;Orimoloye&quot; of the list element is already in use." />
+</QBXMLMsgsRs>
+</QBXML>
++--
+string hresult = 
+string message = 
+
+Response received = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="3" statusCode="3100" statusSeverity="Error" statusMessage="The name &quot;Orimoloye&quot; of the list element is already in use." />
+</QBXMLMsgsRs>
+</QBXML>
++--
+
+2017-08-06 17:03:43,443 [70] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: receiveResponseXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435234
+string responseXML from QB = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="3" statusCode="3100" statusSeverity="Error" statusMessage="The name &quot;Orimoloye&quot; of the list element is already in use." />
+</QBXMLMsgsRs>
+</QBXML>
++--
+string hresult = 
+string message = 
+
+Response received = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="3" statusCode="3100" statusSeverity="Error" statusMessage="The name &quot;Orimoloye&quot; of the list element is already in use." />
+</QBXMLMsgsRs>
+</QBXML>
++--
+
+Return values: 
+int retVal= 0
+
+2017-08-06 17:03:43,624 [70] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435234
+string strHCPResponse = --++--
+string strCompanyFileName = C:\Users\Public\Documents\Intuit\QuickBooks\Company Files\Techrunch Solution Ltd.qbw
+string qbXMLCountry = US
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+
+Return values: 
+ requestXML to = --++-- 
+
+2017-08-06 17:03:44,467 [70] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: closeConnection() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435234
+
+
+Return values: 
+string retVal= OK
+
+2017-08-06 17:05:43,286 [70] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – [Session 'tanlvxjanefgg3g1bdttqoeq'] with ticket id : 22:25:58.435234 (counter: 1)
+2017-08-06 17:05:43,296 [70] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435234
+string strHCPResponse = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<HostQueryRs requestID="0" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<HostRet>
+<ProductName>QuickBooks Pro 2016</ProductName>
+<MajorVersion>26</MajorVersion>
+<MinorVersion>0</MinorVersion>
+<Country>US</Country>
+<SupportedQBXMLVersion>1.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>1.1</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>2.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>2.1</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>3.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>4.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>4.1</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>5.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>6.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>7.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>8.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>9.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>10.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>11.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>12.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>13.0</SupportedQBXMLVersion>
+<IsAutomaticLogin>false</IsAutomaticLogin>
+<QBFileMode>SingleUser</QBFileMode>
+</HostRet>
+</HostQueryRs>
+<CompanyQueryRs requestID="1" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CompanyRet>
+<IsSampleCompany>false</IsSampleCompany>
+<CompanyName>Techrunch Solution Ltd</CompanyName>
+<LegalCompanyName>Techrunch Solution Ltd</LegalCompanyName>
+<Address>
+<City>plot 41, beckley estate, abule-</City>
+<State>SC</State>
+<PostalCode>23401</PostalCode>
+<Country>UK</Country>
+</Address>
+<AddressBlock>
+<Addr1>plot 41, beckley estate, abule-egba Lagos</Addr1>
+<Addr2>SC 23401</Addr2>
+</AddressBlock>
+<LegalAddress>
+<Addr1>plot 41, beckley estate, abule-egba Lagos</Addr1>
+<City>Lagos</City>
+<State>SC</State>
+<PostalCode>23401</PostalCode>
+<Country>US</Country>
+</LegalAddress>
+<Phone>80213121</Phone>
+<FirstMonthFiscalYear>January</FirstMonthFiscalYear>
+<FirstMonthIncomeTaxYear>January</FirstMonthIncomeTaxYear>
+<CompanyType>InformationTechnologyComputersSoftware</CompanyType>
+<SSN>123-45-6789</SSN>
+<TaxForm>Form1120</TaxForm>
+<SubscribedServices>
+<Service>
+<Name>QuickBooks Online Banking</Name>
+<Domain>banking.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing</Name>
+<Domain>billing.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing Level 1 Service</Name>
+<Domain>qbob1.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing Level 2 Service</Name>
+<Domain>qbob2.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing Payment Service</Name>
+<Domain>qbobpay.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Bill Payment</Name>
+<Domain>billpay.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing Paper Mailing Service</Name>
+<Domain>qbobpaper.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Payroll Service</Name>
+<Domain>payroll.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Basic Payroll Service</Name>
+<Domain>payrollbsc.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Basic Disk Payroll Service</Name>
+<Domain>payrollbscdisk.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Deluxe Payroll Service</Name>
+<Domain>payrolldlx.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Premier Payroll Service</Name>
+<Domain>payrollprm.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>Basic Plus Federal</Name>
+<Domain>basic_plus_fed.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>Basic Plus Federal and State</Name>
+<Domain>basic_plus_fed_state.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>Basic Plus Direct Deposit</Name>
+<Domain>basic_plus_dd.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>Merchant Account Service</Name>
+<Domain>mas.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+</SubscribedServices>
+<AccountantCopy>
+<AccountantCopyExists>false</AccountantCopyExists>
+</AccountantCopy>
+<DataExtRet>
+<OwnerID>{57F3B9B1-86F1-4fcc-B1EE-566DE1813D20}</OwnerID>
+<DataExtName>AppLock</DataExtName>
+<DataExtType>STR255TYPE</DataExtType>
+<DataExtValue>LOCKED:BLUECHIP-PC:636376323413942763</DataExtValue>
+</DataExtRet>
+<DataExtRet>
+<OwnerID>{57F3B9B1-86F1-4fcc-B1EE-566DE1813D20}</OwnerID>
+<DataExtName>FileID</DataExtName>
+<DataExtType>STR255TYPE</DataExtType>
+<DataExtValue>{90A44FB5-33D9-4815-AC85-BC87A7E7D1EB}</DataExtValue>
+</DataExtRet>
+</CompanyRet>
+</CompanyQueryRs>
+<PreferencesQueryRs requestID="2" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<PreferencesRet>
+<AccountingPreferences>
+<IsUsingAccountNumbers>false</IsUsingAccountNumbers>
+<IsRequiringAccounts>true</IsRequiringAccounts>
+<IsUsingClassTracking>false</IsUsingClassTracking>
+<IsUsingAuditTrail>true</IsUsingAuditTrail>
+<IsAssigningJournalEntryNumbers>true</IsAssigningJournalEntryNumbers>
+</AccountingPreferences>
+<FinanceChargePreferences>
+<AnnualInterestRate>0.00</AnnualInterestRate>
+<MinFinanceCharge>0.00</MinFinanceCharge>
+<GracePeriod>0</GracePeriod>
+<IsAssessingForOverdueCharges>false</IsAssessingForOverdueCharges>
+<CalculateChargesFrom>DueDate</CalculateChargesFrom>
+<IsMarkedToBePrinted>false</IsMarkedToBePrinted>
+</FinanceChargePreferences>
+<JobsAndEstimatesPreferences>
+<IsUsingEstimates>true</IsUsingEstimates>
+<IsUsingProgressInvoicing>false</IsUsingProgressInvoicing>
+<IsPrintingItemsWithZeroAmounts>false</IsPrintingItemsWithZeroAmounts>
+</JobsAndEstimatesPreferences>
+<MultiCurrencyPreferences>
+<IsMultiCurrencyOn>false</IsMultiCurrencyOn>
+</MultiCurrencyPreferences>
+<MultiLocationInventoryPreferences>
+<IsMultiLocationInventoryAvailable>false</IsMultiLocationInventoryAvailable>
+<IsMultiLocationInventoryEnabled>false</IsMultiLocationInventoryEnabled>
+</MultiLocationInventoryPreferences>
+<PurchasesAndVendorsPreferences>
+<IsUsingInventory>false</IsUsingInventory>
+<DaysBillsAreDue>10</DaysBillsAreDue>
+<IsAutomaticallyUsingDiscounts>false</IsAutomaticallyUsingDiscounts>
+</PurchasesAndVendorsPreferences>
+<ReportsPreferences>
+<AgingReportBasis>AgeFromDueDate</AgingReportBasis>
+<SummaryReportBasis>Accrual</SummaryReportBasis>
+</ReportsPreferences>
+<SalesAndCustomersPreferences>
+<IsTrackingReimbursedExpensesAsIncome>false</IsTrackingReimbursedExpensesAsIncome>
+<IsAutoApplyingPayments>true</IsAutoApplyingPayments>
+<PriceLevels>
+<IsUsingPriceLevels>true</IsUsingPriceLevels>
+<IsRoundingSalesPriceUp>true</IsRoundingSalesPriceUp>
+</PriceLevels>
+</SalesAndCustomersPreferences>
+<TimeTrackingPreferences>
+<FirstDayOfWeek>Monday</FirstDayOfWeek>
+</TimeTrackingPreferences>
+<CurrentAppAccessRights>
+<IsAutomaticLoginAllowed>true</IsAutomaticLoginAllowed>
+<AutomaticLoginUserName>eclinic</AutomaticLoginUserName>
+<IsPersonalDataAccessAllowed>false</IsPersonalDataAccessAllowed>
+</CurrentAppAccessRights>
+<ItemsAndInventoryPreferences>
+<EnhancedInventoryReceivingEnabled>false</EnhancedInventoryReceivingEnabled>
+<IsTrackingSerialOrLotNumber>None</IsTrackingSerialOrLotNumber>
+<FIFOEnabled>false</FIFOEnabled>
+<IsRSBEnabled>false</IsRSBEnabled>
+<IsBarcodeEnabled>false</IsBarcodeEnabled>
+</ItemsAndInventoryPreferences>
+</PreferencesRet>
+</PreferencesQueryRs>
+</QBXMLMsgsRs>
+</QBXML>
++--
+string strCompanyFileName = C:\Users\Public\Documents\Intuit\QuickBooks\Company Files\Techrunch Solution Ltd.qbw
+string qbXMLCountry = US
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+sending request no = 1
+
+Return values: 
+ requestXML to = --+<?xml version="1.0" encoding="utf-8"?>
+<?qbxml version="2.0"?><QBXML>
+  <QBXMLMsgsRq onError="stopOnError">
+    <CustomerAddRq requestID="3">
+      <CustomerAdd>
+        <Name>Orimoloye</Name>
+        <IsActive>true</IsActive>
+        <Salutation>Mr</Salutation>
+        <FirstName>C</FirstName>
+        <MiddleName>L</MiddleName>
+        <LastName>Orimoloye</LastName>
+        <BillAddress>
+          <Addr1>1, Jane Doe Close</Addr1>
+          <City>Ikoyi</City>
+          <State>Lagos</State>
+          <PostalCode>23401</PostalCode>
+        </BillAddress>
+        <Phone>08033646203</Phone>
+        <Email>lake@gmail.com</Email>
+      </CustomerAdd>
+    </CustomerAddRq>
+  </QBXMLMsgsRq>
+</QBXML>+-- 
+
+2017-08-06 17:05:43,634 [70] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: receiveResponseXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435234
+string responseXML from QB = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="3" statusCode="3100" statusSeverity="Error" statusMessage="The name &quot;Orimoloye&quot; of the list element is already in use." />
+</QBXMLMsgsRs>
+</QBXML>
++--
+string hresult = 
+string message = 
+
+Response received = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="3" statusCode="3100" statusSeverity="Error" statusMessage="The name &quot;Orimoloye&quot; of the list element is already in use." />
+</QBXMLMsgsRs>
+</QBXML>
++--
+
+2017-08-06 17:05:43,745 [70] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: receiveResponseXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435234
+string responseXML from QB = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="3" statusCode="3100" statusSeverity="Error" statusMessage="The name &quot;Orimoloye&quot; of the list element is already in use." />
+</QBXMLMsgsRs>
+</QBXML>
++--
+string hresult = 
+string message = 
+
+Response received = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="3" statusCode="3100" statusSeverity="Error" statusMessage="The name &quot;Orimoloye&quot; of the list element is already in use." />
+</QBXMLMsgsRs>
+</QBXML>
++--
+
+Return values: 
+int retVal= 0
+
+2017-08-06 17:05:43,971 [70] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435234
+string strHCPResponse = --++--
+string strCompanyFileName = C:\Users\Public\Documents\Intuit\QuickBooks\Company Files\Techrunch Solution Ltd.qbw
+string qbXMLCountry = US
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+
+Return values: 
+ requestXML to = --++-- 
+
+2017-08-06 17:05:44,636 [70] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: closeConnection() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435234
+
+
+Return values: 
+string retVal= OK
+
+2017-08-06 18:10:42,095 [65] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – [Session 'urrcyaibcu0omx2jcsmspq3v'] with ticket id : 22:25:58.435289 (counter: 1)
+2017-08-06 18:10:42,119 [65] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435289
+string strHCPResponse = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<HostQueryRs requestID="0" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<HostRet>
+<ProductName>QuickBooks Pro 2016</ProductName>
+<MajorVersion>26</MajorVersion>
+<MinorVersion>0</MinorVersion>
+<Country>US</Country>
+<SupportedQBXMLVersion>1.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>1.1</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>2.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>2.1</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>3.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>4.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>4.1</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>5.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>6.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>7.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>8.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>9.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>10.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>11.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>12.0</SupportedQBXMLVersion>
+<SupportedQBXMLVersion>13.0</SupportedQBXMLVersion>
+<IsAutomaticLogin>false</IsAutomaticLogin>
+<QBFileMode>SingleUser</QBFileMode>
+</HostRet>
+</HostQueryRs>
+<CompanyQueryRs requestID="1" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CompanyRet>
+<IsSampleCompany>false</IsSampleCompany>
+<CompanyName>Techrunch Solution Ltd</CompanyName>
+<LegalCompanyName>Techrunch Solution Ltd</LegalCompanyName>
+<Address>
+<City>plot 41, beckley estate, abule-</City>
+<State>SC</State>
+<PostalCode>23401</PostalCode>
+<Country>UK</Country>
+</Address>
+<AddressBlock>
+<Addr1>plot 41, beckley estate, abule-egba Lagos</Addr1>
+<Addr2>SC 23401</Addr2>
+</AddressBlock>
+<LegalAddress>
+<Addr1>plot 41, beckley estate, abule-egba Lagos</Addr1>
+<City>Lagos</City>
+<State>SC</State>
+<PostalCode>23401</PostalCode>
+<Country>US</Country>
+</LegalAddress>
+<Phone>80213121</Phone>
+<FirstMonthFiscalYear>January</FirstMonthFiscalYear>
+<FirstMonthIncomeTaxYear>January</FirstMonthIncomeTaxYear>
+<CompanyType>InformationTechnologyComputersSoftware</CompanyType>
+<SSN>123-45-6789</SSN>
+<TaxForm>Form1120</TaxForm>
+<SubscribedServices>
+<Service>
+<Name>QuickBooks Online Banking</Name>
+<Domain>banking.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing</Name>
+<Domain>billing.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing Level 1 Service</Name>
+<Domain>qbob1.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing Level 2 Service</Name>
+<Domain>qbob2.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing Payment Service</Name>
+<Domain>qbobpay.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Bill Payment</Name>
+<Domain>billpay.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Online Billing Paper Mailing Service</Name>
+<Domain>qbobpaper.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Payroll Service</Name>
+<Domain>payroll.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Basic Payroll Service</Name>
+<Domain>payrollbsc.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Basic Disk Payroll Service</Name>
+<Domain>payrollbscdisk.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Deluxe Payroll Service</Name>
+<Domain>payrolldlx.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>QuickBooks Premier Payroll Service</Name>
+<Domain>payrollprm.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>Basic Plus Federal</Name>
+<Domain>basic_plus_fed.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>Basic Plus Federal and State</Name>
+<Domain>basic_plus_fed_state.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>Basic Plus Direct Deposit</Name>
+<Domain>basic_plus_dd.qb</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+<Service>
+<Name>Merchant Account Service</Name>
+<Domain>mas.qbn</Domain>
+<ServiceStatus>Never</ServiceStatus>
+</Service>
+</SubscribedServices>
+<AccountantCopy>
+<AccountantCopyExists>false</AccountantCopyExists>
+</AccountantCopy>
+<DataExtRet>
+<OwnerID>{57F3B9B1-86F1-4fcc-B1EE-566DE1813D20}</OwnerID>
+<DataExtName>AppLock</DataExtName>
+<DataExtType>STR255TYPE</DataExtType>
+<DataExtValue>LOCKED:BLUECHIP-PC:636376362400243688</DataExtValue>
+</DataExtRet>
+<DataExtRet>
+<OwnerID>{57F3B9B1-86F1-4fcc-B1EE-566DE1813D20}</OwnerID>
+<DataExtName>FileID</DataExtName>
+<DataExtType>STR255TYPE</DataExtType>
+<DataExtValue>{90A44FB5-33D9-4815-AC85-BC87A7E7D1EB}</DataExtValue>
+</DataExtRet>
+</CompanyRet>
+</CompanyQueryRs>
+<PreferencesQueryRs requestID="2" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<PreferencesRet>
+<AccountingPreferences>
+<IsUsingAccountNumbers>false</IsUsingAccountNumbers>
+<IsRequiringAccounts>true</IsRequiringAccounts>
+<IsUsingClassTracking>false</IsUsingClassTracking>
+<IsUsingAuditTrail>true</IsUsingAuditTrail>
+<IsAssigningJournalEntryNumbers>true</IsAssigningJournalEntryNumbers>
+</AccountingPreferences>
+<FinanceChargePreferences>
+<AnnualInterestRate>0.00</AnnualInterestRate>
+<MinFinanceCharge>0.00</MinFinanceCharge>
+<GracePeriod>0</GracePeriod>
+<IsAssessingForOverdueCharges>false</IsAssessingForOverdueCharges>
+<CalculateChargesFrom>DueDate</CalculateChargesFrom>
+<IsMarkedToBePrinted>false</IsMarkedToBePrinted>
+</FinanceChargePreferences>
+<JobsAndEstimatesPreferences>
+<IsUsingEstimates>true</IsUsingEstimates>
+<IsUsingProgressInvoicing>false</IsUsingProgressInvoicing>
+<IsPrintingItemsWithZeroAmounts>false</IsPrintingItemsWithZeroAmounts>
+</JobsAndEstimatesPreferences>
+<MultiCurrencyPreferences>
+<IsMultiCurrencyOn>false</IsMultiCurrencyOn>
+</MultiCurrencyPreferences>
+<MultiLocationInventoryPreferences>
+<IsMultiLocationInventoryAvailable>false</IsMultiLocationInventoryAvailable>
+<IsMultiLocationInventoryEnabled>false</IsMultiLocationInventoryEnabled>
+</MultiLocationInventoryPreferences>
+<PurchasesAndVendorsPreferences>
+<IsUsingInventory>false</IsUsingInventory>
+<DaysBillsAreDue>10</DaysBillsAreDue>
+<IsAutomaticallyUsingDiscounts>false</IsAutomaticallyUsingDiscounts>
+</PurchasesAndVendorsPreferences>
+<ReportsPreferences>
+<AgingReportBasis>AgeFromDueDate</AgingReportBasis>
+<SummaryReportBasis>Accrual</SummaryReportBasis>
+</ReportsPreferences>
+<SalesAndCustomersPreferences>
+<IsTrackingReimbursedExpensesAsIncome>false</IsTrackingReimbursedExpensesAsIncome>
+<IsAutoApplyingPayments>true</IsAutoApplyingPayments>
+<PriceLevels>
+<IsUsingPriceLevels>true</IsUsingPriceLevels>
+<IsRoundingSalesPriceUp>true</IsRoundingSalesPriceUp>
+</PriceLevels>
+</SalesAndCustomersPreferences>
+<TimeTrackingPreferences>
+<FirstDayOfWeek>Monday</FirstDayOfWeek>
+</TimeTrackingPreferences>
+<CurrentAppAccessRights>
+<IsAutomaticLoginAllowed>true</IsAutomaticLoginAllowed>
+<AutomaticLoginUserName>eclinic</AutomaticLoginUserName>
+<IsPersonalDataAccessAllowed>false</IsPersonalDataAccessAllowed>
+</CurrentAppAccessRights>
+<ItemsAndInventoryPreferences>
+<EnhancedInventoryReceivingEnabled>false</EnhancedInventoryReceivingEnabled>
+<IsTrackingSerialOrLotNumber>None</IsTrackingSerialOrLotNumber>
+<FIFOEnabled>false</FIFOEnabled>
+<IsRSBEnabled>false</IsRSBEnabled>
+<IsBarcodeEnabled>false</IsBarcodeEnabled>
+</ItemsAndInventoryPreferences>
+</PreferencesRet>
+</PreferencesQueryRs>
+</QBXMLMsgsRs>
+</QBXML>
++--
+string strCompanyFileName = C:\Users\Public\Documents\Intuit\QuickBooks\Company Files\Techrunch Solution Ltd.qbw
+string qbXMLCountry = US
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+sending request no = 1
+
+Return values: 
+ requestXML to = --+<?xml version="1.0" encoding="utf-8"?>
+<?qbxml version="2.0"?><QBXML>
+  <QBXMLMsgsRq onError="stopOnError">
+    <CustomerAddRq requestID="4">
+      <CustomerAdd>
+        <Name>Another</Name>
+        <IsActive>true</IsActive>
+        <Salutation>Mr</Salutation>
+        <FirstName>C</FirstName>
+        <MiddleName>T</MiddleName>
+        <LastName>Another</LastName>
+        <BillAddress>
+          <Addr1>1, Jane Doe Close</Addr1>
+          <City>Ikoyi</City>
+          <State>Lagos</State>
+          <PostalCode>23401</PostalCode>
+        </BillAddress>
+        <Phone>08033646204</Phone>
+        <Email>test1@gmail.com</Email>
+      </CustomerAdd>
+    </CustomerAddRq>
+  </QBXMLMsgsRq>
+</QBXML>+-- 
+
+2017-08-06 18:10:42,504 [57] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: receiveResponseXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435289
+string responseXML from QB = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="4" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CustomerRet>
+<ListID>80000004-1502039442</ListID>
+<TimeCreated>2017-08-06T18:10:42+01:00</TimeCreated>
+<TimeModified>2017-08-06T18:10:42+01:00</TimeModified>
+<EditSequence>1502039442</EditSequence>
+<Name>Another</Name>
+<FullName>Another</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<Salutation>Mr</Salutation>
+<FirstName>C</FirstName>
+<MiddleName>T</MiddleName>
+<LastName>Another</LastName>
+<BillAddress>
+<Addr1>1, Jane Doe Close</Addr1>
+<City>Ikoyi</City>
+<State>Lagos</State>
+<PostalCode>23401</PostalCode>
+</BillAddress>
+<Phone>08033646204</Phone>
+<Email>test1@gmail.com</Email>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<JobStatus>None</JobStatus>
+</CustomerRet>
+</CustomerAddRs>
+</QBXMLMsgsRs>
+</QBXML>
++--
+string hresult = 
+string message = 
+
+Response received = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="4" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CustomerRet>
+<ListID>80000004-1502039442</ListID>
+<TimeCreated>2017-08-06T18:10:42+01:00</TimeCreated>
+<TimeModified>2017-08-06T18:10:42+01:00</TimeModified>
+<EditSequence>1502039442</EditSequence>
+<Name>Another</Name>
+<FullName>Another</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<Salutation>Mr</Salutation>
+<FirstName>C</FirstName>
+<MiddleName>T</MiddleName>
+<LastName>Another</LastName>
+<BillAddress>
+<Addr1>1, Jane Doe Close</Addr1>
+<City>Ikoyi</City>
+<State>Lagos</State>
+<PostalCode>23401</PostalCode>
+</BillAddress>
+<Phone>08033646204</Phone>
+<Email>test1@gmail.com</Email>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<JobStatus>None</JobStatus>
+</CustomerRet>
+</CustomerAddRs>
+</QBXMLMsgsRs>
+</QBXML>
++--
+
+2017-08-06 18:10:42,904 [57] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: receiveResponseXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435289
+string responseXML from QB = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="4" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CustomerRet>
+<ListID>80000004-1502039442</ListID>
+<TimeCreated>2017-08-06T18:10:42+01:00</TimeCreated>
+<TimeModified>2017-08-06T18:10:42+01:00</TimeModified>
+<EditSequence>1502039442</EditSequence>
+<Name>Another</Name>
+<FullName>Another</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<Salutation>Mr</Salutation>
+<FirstName>C</FirstName>
+<MiddleName>T</MiddleName>
+<LastName>Another</LastName>
+<BillAddress>
+<Addr1>1, Jane Doe Close</Addr1>
+<City>Ikoyi</City>
+<State>Lagos</State>
+<PostalCode>23401</PostalCode>
+</BillAddress>
+<Phone>08033646204</Phone>
+<Email>test1@gmail.com</Email>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<JobStatus>None</JobStatus>
+</CustomerRet>
+</CustomerAddRs>
+</QBXMLMsgsRs>
+</QBXML>
++--
+string hresult = 
+string message = 
+
+Response received = --+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="4" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CustomerRet>
+<ListID>80000004-1502039442</ListID>
+<TimeCreated>2017-08-06T18:10:42+01:00</TimeCreated>
+<TimeModified>2017-08-06T18:10:42+01:00</TimeModified>
+<EditSequence>1502039442</EditSequence>
+<Name>Another</Name>
+<FullName>Another</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<Salutation>Mr</Salutation>
+<FirstName>C</FirstName>
+<MiddleName>T</MiddleName>
+<LastName>Another</LastName>
+<BillAddress>
+<Addr1>1, Jane Doe Close</Addr1>
+<City>Ikoyi</City>
+<State>Lagos</State>
+<PostalCode>23401</PostalCode>
+</BillAddress>
+<Phone>08033646204</Phone>
+<Email>test1@gmail.com</Email>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<JobStatus>None</JobStatus>
+</CustomerRet>
+</CustomerAddRs>
+</QBXMLMsgsRs>
+</QBXML>
++--
+QuickBooks response :
+
+statusCode = 0, statusSeverity = Info, statusMessage = Status OK
+Customer ListID = 80000004-1502039442
+Customer Name = Another
+Customer FullName = Another
+Return values: 
+int retVal= 0
+
+2017-08-06 18:10:43,059 [57] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435289
+string strHCPResponse = --++--
+string strCompanyFileName = C:\Users\Public\Documents\Intuit\QuickBooks\Company Files\Techrunch Solution Ltd.qbw
+string qbXMLCountry = US
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+
+Return values: 
+ requestXML to = --++-- 
+
+2017-08-06 18:10:43,734 [57] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: closeConnection() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435289
+
+
+Return values: 
+string retVal= OK
+
+2017-08-06 18:29:23,531 [11] ERROR FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at FCQBWebConnAPI.QBWebConnSvcSoap.receiveResponseXML(receiveResponseXMLRequest request) in F:\LaoluOlapegba\Myprojects\femi\FCWBWebConnSvc\FCWBWebConnSvc\QBWebConnSvcSoap.svc.cs:line 310
+2017-08-06 18:29:53,381 [11] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: receiveResponseXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435289
+string responseXML from QB = --+
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="4" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CustomerRet>
+<ListID>80000004-1502039442</ListID>
+<TimeCreated>2017-08-06T18:10:42+01:00</TimeCreated>
+<TimeModified>2017-08-06T18:10:42+01:00</TimeModified>
+<EditSequence>1502039442</EditSequence>
+<Name>Another</Name>
+<FullName>Another</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<Salutation>Mr</Salutation>
+<FirstName>C</FirstName>
+<MiddleName>T</MiddleName>
+<LastName>Another</LastName>
+<BillAddress>
+<Addr1>1, Jane Doe Close</Addr1>
+<City>Ikoyi</City>
+<State>Lagos</State>
+<PostalCode>23401</PostalCode>
+</BillAddress>
+<Phone>08033646204</Phone>
+<Email>test1@gmail.com</Email>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<JobStatus>None</JobStatus>
+</CustomerRet>
+</CustomerAddRs>
+</QBXMLMsgsRs>
+</QBXML>+--
+string hresult = 
+string message = 
+
+Response received = --+
+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="4" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CustomerRet>
+<ListID>80000004-1502039442</ListID>
+<TimeCreated>2017-08-06T18:10:42+01:00</TimeCreated>
+<TimeModified>2017-08-06T18:10:42+01:00</TimeModified>
+<EditSequence>1502039442</EditSequence>
+<Name>Another</Name>
+<FullName>Another</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<Salutation>Mr</Salutation>
+<FirstName>C</FirstName>
+<MiddleName>T</MiddleName>
+<LastName>Another</LastName>
+<BillAddress>
+<Addr1>1, Jane Doe Close</Addr1>
+<City>Ikoyi</City>
+<State>Lagos</State>
+<PostalCode>23401</PostalCode>
+</BillAddress>
+<Phone>08033646204</Phone>
+<Email>test1@gmail.com</Email>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<JobStatus>None</JobStatus>
+</CustomerRet>
+</CustomerAddRs>
+</QBXMLMsgsRs>
+</QBXML>+--
+
+2017-08-06 18:33:08,884 [11] ERROR FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – 
+System.Reflection.TargetException: Non-static field requires a target.
+   at System.Reflection.RtFieldInfo.CheckConsistency(Object target)
+   at System.Reflection.RtFieldInfo.InternalGetValue(Object obj, StackCrawlMark& stackMark)
+   at System.Reflection.RtFieldInfo.GetValue(Object obj)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryGetFieldOrPropertyValue(MemberExpression me, Object instance, Object& memberValue)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryEvaluatePath(Expression expression, ConstantExpression& constantExpression)
+   at System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.EvaluateParameter(Object[] arguments)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at FCQBWebConnAPI.QBWebConnSvcSoap.UpdateQJobStatus(String ticketId, Int32 statusCode, String statusDesc, String qbIdentifier)
+   at FCQBWebConnAPI.QBWebConnSvcSoap.receiveResponseXML(receiveResponseXMLRequest request)
+2017-08-06 18:42:09,695 [11] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: receiveResponseXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435289
+string responseXML from QB = --+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="4" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CustomerRet>
+<ListID>80000004-1502039442</ListID>
+<TimeCreated>2017-08-06T18:10:42+01:00</TimeCreated>
+<TimeModified>2017-08-06T18:10:42+01:00</TimeModified>
+<EditSequence>1502039442</EditSequence>
+<Name>Another</Name>
+<FullName>Another</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<Salutation>Mr</Salutation>
+<FirstName>C</FirstName>
+<MiddleName>T</MiddleName>
+<LastName>Another</LastName>
+<BillAddress>
+<Addr1>1, Jane Doe Close</Addr1>
+<City>Ikoyi</City>
+<State>Lagos</State>
+<PostalCode>23401</PostalCode>
+</BillAddress>
+<Phone>08033646204</Phone>
+<Email>test1@gmail.com</Email>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<JobStatus>None</JobStatus>
+</CustomerRet>
+</CustomerAddRs>
+</QBXMLMsgsRs>
+</QBXML>+--
+string hresult = 
+string message = 
+
+Response received = --+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="4" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CustomerRet>
+<ListID>80000004-1502039442</ListID>
+<TimeCreated>2017-08-06T18:10:42+01:00</TimeCreated>
+<TimeModified>2017-08-06T18:10:42+01:00</TimeModified>
+<EditSequence>1502039442</EditSequence>
+<Name>Another</Name>
+<FullName>Another</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<Salutation>Mr</Salutation>
+<FirstName>C</FirstName>
+<MiddleName>T</MiddleName>
+<LastName>Another</LastName>
+<BillAddress>
+<Addr1>1, Jane Doe Close</Addr1>
+<City>Ikoyi</City>
+<State>Lagos</State>
+<PostalCode>23401</PostalCode>
+</BillAddress>
+<Phone>08033646204</Phone>
+<Email>test1@gmail.com</Email>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<JobStatus>None</JobStatus>
+</CustomerRet>
+</CustomerAddRs>
+</QBXMLMsgsRs>
+</QBXML>+--
+
+2017-08-06 18:42:46,319 [11] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: receiveResponseXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 22:25:58.435289
+string responseXML from QB = --+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="4" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CustomerRet>
+<ListID>80000004-1502039442</ListID>
+<TimeCreated>2017-08-06T18:10:42+01:00</TimeCreated>
+<TimeModified>2017-08-06T18:10:42+01:00</TimeModified>
+<EditSequence>1502039442</EditSequence>
+<Name>Another</Name>
+<FullName>Another</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<Salutation>Mr</Salutation>
+<FirstName>C</FirstName>
+<MiddleName>T</MiddleName>
+<LastName>Another</LastName>
+<BillAddress>
+<Addr1>1, Jane Doe Close</Addr1>
+<City>Ikoyi</City>
+<State>Lagos</State>
+<PostalCode>23401</PostalCode>
+</BillAddress>
+<Phone>08033646204</Phone>
+<Email>test1@gmail.com</Email>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<JobStatus>None</JobStatus>
+</CustomerRet>
+</CustomerAddRs>
+</QBXMLMsgsRs>
+</QBXML>+--
+string hresult = 
+string message = 
+
+Response received = --+<QBXML>
+<QBXMLMsgsRs>
+<CustomerAddRs requestID="4" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<CustomerRet>
+<ListID>80000004-1502039442</ListID>
+<TimeCreated>2017-08-06T18:10:42+01:00</TimeCreated>
+<TimeModified>2017-08-06T18:10:42+01:00</TimeModified>
+<EditSequence>1502039442</EditSequence>
+<Name>Another</Name>
+<FullName>Another</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<Salutation>Mr</Salutation>
+<FirstName>C</FirstName>
+<MiddleName>T</MiddleName>
+<LastName>Another</LastName>
+<BillAddress>
+<Addr1>1, Jane Doe Close</Addr1>
+<City>Ikoyi</City>
+<State>Lagos</State>
+<PostalCode>23401</PostalCode>
+</BillAddress>
+<Phone>08033646204</Phone>
+<Email>test1@gmail.com</Email>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<JobStatus>None</JobStatus>
+</CustomerRet>
+</CustomerAddRs>
+</QBXMLMsgsRs>
+</QBXML>+--
+QuickBooks response :
+
+statusCode = 0, statusSeverity = Info, statusMessage = Status OK
+Customer ListID = 80000004-1502039442
+Customer Name = Another
+Customer FullName = Another
+Return values: 
+int retVal= 0
+

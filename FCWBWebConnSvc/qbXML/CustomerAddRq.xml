@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?qbxml version="13.0"?>
+<QBXML>
+	<QBXMLMsgsRq onError="stopOnError">
+
+		<CustomerAddRq requestID="">
+			<CustomerAdd>
+				<Name>Keith Palmer Jr.</Name>
+        <IsActive >BOOLTYPE</IsActive> <!-- optional -->
+        <Salutation >STRTYPE</Salutation> <!-- optional -->
+				<FirstName>Keith</FirstName>
+				<MiddleName></MiddleName>
+				<LastName>Palmer Jr.</LastName>
+				<BillAddress>
+					<Addr1>134 Stonemill Road</Addr1>
+					<City>Mansfield</City>
+					<State>CT</State>
+					<PostalCode>06268</PostalCode>
+					<Country>USA</Country>
+				</BillAddress>
+				<Phone>999-99-9999</Phone>
+				<Email>test@example.com</Email>
+				<Contact>Keith Palmer Jr.</Contact>
+			</CustomerAdd>
+		</CustomerAddRq>
+		
+	</QBXMLMsgsRq>
+</QBXML>

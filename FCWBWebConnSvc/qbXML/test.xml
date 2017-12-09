@@ -1,0 +1,13 @@
+﻿"<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<QBXML>
+  \r\n  <QBXMLMsgsRq onError=\"stopOnError\">
+    \r\n    <ReceivePaymentAddRq>
+      \r\n      <ReceivePaymentAdd>
+        \r\n        <CustomerRef>
+          \r\n          <ListID>800020FF-1457349121</ListID>\r\n
+        </CustomerRef>\r\n        <TxnDate>2017-10-23</TxnDate>\r\n        <RefNumber>0</RefNumber>\r\n        <TotalAmount>0</TotalAmount>\r\n        <PaymentMethodRef>
+          \r\n          <FullName>Cash</FullName>\r\n
+        </PaymentMethodRef>\r\n        <Memo>FCC-LAG-01</Memo>\r\n
+      </ReceivePaymentAdd>\r\n
+    </ReceivePaymentAddRq>\r\n
+  </QBXMLMsgsRq>\r\n
+</QBXML>"

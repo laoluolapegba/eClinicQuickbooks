@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="QBXML">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="QBXMLMsgsRs">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CustomerAddRs">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CustomerRet">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ListID" type="xs:string" />
+                          <xs:element name="TimeCreated" type="xs:dateTime" />
+                          <xs:element name="TimeModified" type="xs:dateTime" />
+                          <xs:element name="EditSequence" type="xs:unsignedInt" />
+                          <xs:element name="Name" type="xs:string" />
+                          <xs:element name="FullName" type="xs:string" />
+                          <xs:element name="IsActive" type="xs:boolean" />
+                          <xs:element name="Sublevel" type="xs:unsignedByte" />
+                          <xs:element name="CompanyName" type="xs:string" />
+                          <xs:element name="FirstName" type="xs:string" />
+                          <xs:element name="LastName" type="xs:string" />
+                          <xs:element name="BillAddress">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Addr1" type="xs:string" />
+                                <xs:element name="Addr2" type="xs:string" />
+                                <xs:element name="Addr3" type="xs:string" />
+                                <xs:element name="City" type="xs:string" />
+                                <xs:element name="State" type="xs:string" />
+                                <xs:element name="PostalCode" type="xs:unsignedInt" />
+                                <xs:element name="Country" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Phone" type="xs:string" />
+                          <xs:element name="AltPhone" type="xs:string" />
+                          <xs:element name="Fax" type="xs:string" />
+                          <xs:element name="Email" type="xs:string" />
+                          <xs:element name="Contact" type="xs:string" />
+                          <xs:element name="Balance" type="xs:decimal" />
+                          <xs:element name="TotalBalance" type="xs:decimal" />
+                          <xs:element name="JobStatus" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="requestID" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="statusCode" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="statusSeverity" type="xs:string" use="required" />
+                  <xs:attribute name="statusMessage" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

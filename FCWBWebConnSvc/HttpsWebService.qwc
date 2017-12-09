@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<QBWCXML>
+  <AppName>eClinicQBWebConnSvc</AppName>
+  <AppID></AppID>
+  <AppURL>https://bluechip-laolu/fceclinicsvc/QBWebConnSvcSoap.svc?wsdl</AppURL>
+  <AppDescription>Web Service Integrator for eclinic</AppDescription>
+  <AppSupport>https://bluechip-laolu/fceclinicsvc/QBWebConnSvcSoap.svc?wsdl</AppSupport>
+  <UserName>eclinic</UserName>
+  <OwnerID>{57F3B9B1-86F1-4fcc-B1EE-566DE1813D20}</OwnerID>
+  <FileID>{90A44FB5-33D9-4815-AC85-BC87A7E7D1EB}</FileID>
+  <QBType>QBFS</QBType>
+  <Style>Document</Style>
+  <AuthFlags>0xF</AuthFlags>
+</QBWCXML>

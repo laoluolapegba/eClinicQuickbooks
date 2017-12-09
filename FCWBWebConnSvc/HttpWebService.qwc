@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<QBWCXML>
+<AppName>QBWebConnSvcSoap</AppName>
+<AppID></AppID>
+<AppURL>http://localhost:4019/QBWebConnSvcSoap.svc</AppURL>
+<AppDescription>Connect eClat to Quickbooks</AppDescription>
+<AppSupport>http://localhost:4019/QBWebConnSvcSoap.svc?wsdl</AppSupport>
+<UserName>quick</UserName>
+<OwnerID>{57F3B9B1-86F1-4fcc-B1EE-566DE1813D20}</OwnerID>
+<FileID>{90A44FB5-33D9-4815-AC85-BC87A7E7D1EB}</FileID>
+<QBType>QBFS</QBType>
+<Scheduler>
+<RunEveryNMinutes>2</RunEveryNMinutes>
+</Scheduler>
+</QBWCXML>

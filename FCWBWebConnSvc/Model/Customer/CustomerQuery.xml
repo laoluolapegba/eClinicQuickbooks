@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" ?>
+<QBXML>
+  <QBXMLMsgsRs>
+    <CustomerQueryRs requestID="1" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+      <CustomerRet>
+        <ListID>800010F0-1381319592</ListID>
+        <TimeCreated>2013-10-09T12:53:12+01:00</TimeCreated>
+        <TimeModified>2016-06-19T19:03:18+01:00</TimeModified>
+        <EditSequence>1418063405</EditSequence>
+        <Name>Akwa Ibom State</Name>
+        <FullName>Akwa Ibom State</FullName>
+        <IsActive>true</IsActive>
+        <Sublevel>0</Sublevel>
+        <CompanyName>Akwa Ibom State</CompanyName>
+        <BillAddress>
+          <Addr1>c/o Dr Essien I</Addr1>
+          <Addr2>Government House,</Addr2>
+          <City>Akwa Ibom State, Akwa Ibom Stat</City>
+          <State>Akwa</State>
+        </BillAddress>
+        <SalesRepRef>
+          <ListID>80000041-1390400572</ListID>
+          <FullName>DBT</FullName>
+        </SalesRepRef>
+        <Balance>0.00</Balance>
+        <TotalBalance>716264.51</TotalBalance>
+        <JobStatus>None</JobStatus>
+      </CustomerRet>
+      <CustomerRet>
+        <ListID>800004D4-1340208571</ListID>
+        <TimeCreated>2012-06-20T17:09:31+01:00</TimeCreated>
+        <TimeModified>2017-06-19T14:14:06+01:00</TimeModified>
+        <EditSequence>1396426073</EditSequence>
+        <Name>Akpabio Godswill</Name>
+        <FullName>Akwa Ibom State:Akpabio Godswill</FullName>
+        <IsActive>true</IsActive>
+        <ParentRef>
+          <ListID>800010F0-1381319592</ListID>
+          <FullName>Akwa Ibom State</FullName>
+        </ParentRef>
+        <Sublevel>1</Sublevel>
+        <BillAddress>
+          <Addr1>Akpabio Godswill</Addr1>
+        </BillAddress>
+        <SalesRepRef>
+          <ListID>8000000D-1363961689</ListID>
+          <FullName>OE</FullName>
+        </SalesRepRef>
+        <Balance>716600.00</Balance>
+        <TotalBalance>716600.00</TotalBalance>
+        <JobStatus>None</JobStatus>
+      </CustomerRet>
+      <CustomerRet>
+        <ListID>8000229E-1466333198</ListID>
+        <TimeCreated>2016-06-19T11:46:38+01:00</TimeCreated>
+        <TimeModified>2016-06-19T19:04:37+01:00</TimeModified>
+        <EditSequence>1466333198</EditSequence>
+        <Name>Akpabio Idarabong</Name>
+        <FullName>Akwa Ibom State:Akpabio Idarabong</FullName>
+        <IsActive>true</IsActive>
+        <ParentRef>
+          <ListID>800010F0-1381319592</ListID>
+          <FullName>Akwa Ibom State</FullName>
+        </ParentRef>
+        <Sublevel>1</Sublevel>
+        <CompanyName>Akwa Ibom State</CompanyName>
+        <BillAddress>
+          <Addr1>c/o Dr Essien I</Addr1>
+          <Addr2>Government House,</Addr2>
+          <City>Akwa Ibom State, Akwa Ibom Stat</City>
+          <State>Akwa</State>
+        </BillAddress>
+        <SalesRepRef>
+          <ListID>80000041-1390400572</ListID>
+          <FullName>DBT</FullName>
+        </SalesRepRef>
+        <Balance>-22.40</Balance>
+        <TotalBalance>-22.40</TotalBalance>
+        <JobStatus>None</JobStatus>
+      </CustomerRet>
+      <CustomerRet>
+        <ListID>80002042-1453220313</ListID>
+        <TimeCreated>2016-01-19T17:18:33+01:00</TimeCreated>
+        <TimeModified>2016-06-20T10:04:47+01:00</TimeModified>
+        <EditSequence>1453220313</EditSequence>
+        <Name>Akpabio Ubong</Name>
+        <FullName>Akwa Ibom State:Akpabio Ubong</FullName>
+        <IsActive>true</IsActive>
+        <ParentRef>
+          <ListID>800010F0-1381319592</ListID>
+          <FullName>Akwa Ibom State</FullName>
+        </ParentRef>
+        <Sublevel>1</Sublevel>
+        <CompanyName>Akwa Ibom State</CompanyName>
+        <BillAddress>
+          <Addr1>c/o Dr Essien I</Addr1>
+          <Addr2>Government House,</Addr2>
+          <City>Akwa Ibom State, Akwa Ibom Stat</City>
+          <State>Akwa</State>
+        </BillAddress>
+        <SalesRepRef>
+          <ListID>80000041-1390400572</ListID>
+          <FullName>DBT</FullName>
+        </SalesRepRef>
+        <Balance>0.00</Balance>
+        <TotalBalance>0.00</TotalBalance>
+        <JobStatus>None</JobStatus>
+      </CustomerRet>
+      <CustomerRet>
+        <ListID>800001C4-1338974248</ListID>
+        <TimeCreated>2012-06-06T10:17:28+01:00</TimeCreated>
+        <TimeModified>2016-06-19T19:02:32+01:00</TimeModified>
+        <EditSequence>1382965014</EditSequence>
+        <Name>AKPABIO, GRACE OBOT</Name>
+        <FullName>Akwa Ibom State:AKPABIO, GRACE OBOT</FullName>
+        <IsActive>true</IsActive>
+        <ParentRef>
+          <ListID>800010F0-1381319592</ListID>
+          <FullName>Akwa Ibom State</FullName>
+        </ParentRef>
+        <Sublevel>1</Sublevel>
+        <CompanyName>Private Patient</CompanyName>
+        <FirstName> GRACE</FirstName>
+        <LastName>AKPABIO</LastName>
+        <BillAddress>
+          <Addr1>GRACE AKPABIO</Addr1>
+        </BillAddress>
+        <ShipAddress>
+          <Addr1>GRACE AKPABIO</Addr1>
+        </ShipAddress>
+        <Contact>AKPABIO GRACE</Contact>
+        <SalesRepRef>
+          <ListID>8000000D-1363961689</ListID>
+          <FullName>OE</FullName>
+        </SalesRepRef>
+        <Balance>-310.00</Balance>
+        <TotalBalance>-310.00</TotalBalance>
+        <JobStatus>None</JobStatus>
+      </CustomerRet>
+    </CustomerQueryRs>
+  </QBXMLMsgsRs>
+</QBXML>

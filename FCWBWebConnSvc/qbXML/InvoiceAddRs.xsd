@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="QBXML">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="QBXMLMsgsRs">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InvoiceAddRs">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="InvoiceRet">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="TxnID" type="xs:string" />
+                          <xs:element name="TimeCreated" type="xs:dateTime" />
+                          <xs:element name="TimeModified" type="xs:dateTime" />
+                          <xs:element name="EditSequence" type="xs:unsignedInt" />
+                          <xs:element name="TxnNumber" type="xs:unsignedShort" />
+                          <xs:element name="CustomerRef">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ListID" type="xs:string" />
+                                <xs:element name="FullName" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ARAccountRef">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ListID" type="xs:string" />
+                                <xs:element name="FullName" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="TemplateRef">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ListID" type="xs:string" />
+                                <xs:element name="FullName" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="TxnDate" type="xs:date" />
+                          <xs:element name="RefNumber" type="xs:unsignedShort" />
+                          <xs:element name="BillAddress">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Addr1" type="xs:string" />
+                                <xs:element name="Addr2" type="xs:string" />
+                                <xs:element name="City" type="xs:string" />
+                                <xs:element name="State" type="xs:string" />
+                                <xs:element name="PostalCode" type="xs:unsignedShort" />
+                                <xs:element name="Country" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ShipAddress">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Addr1" type="xs:string" />
+                                <xs:element name="Addr2" type="xs:string" />
+                                <xs:element name="Addr3" type="xs:string" />
+                                <xs:element name="City" type="xs:string" />
+                                <xs:element name="State" type="xs:string" />
+                                <xs:element name="PostalCode" type="xs:unsignedShort" />
+                                <xs:element name="Country" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="IsPending" type="xs:boolean" />
+                          <xs:element name="IsFinanceCharge" type="xs:boolean" />
+                          <xs:element name="TermsRef">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ListID" type="xs:string" />
+                                <xs:element name="FullName" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="DueDate" type="xs:date" />
+                          <xs:element name="SalesRepRef">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ListID" type="xs:string" />
+                                <xs:element name="FullName" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ShipDate" type="xs:date" />
+                          <xs:element name="Subtotal" type="xs:decimal" />
+                          <xs:element name="ItemSalesTaxRef">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ListID" type="xs:string" />
+                                <xs:element name="FullName" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="SalesTaxPercentage" type="xs:decimal" />
+                          <xs:element name="SalesTaxTotal" type="xs:decimal" />
+                          <xs:element name="AppliedAmount" type="xs:decimal" />
+                          <xs:element name="BalanceRemaining" type="xs:decimal" />
+                          <xs:element name="Memo" type="xs:string" />
+                          <xs:element name="IsPaid" type="xs:boolean" />
+                          <xs:element name="IsToBePrinted" type="xs:boolean" />
+                          <xs:element name="CustomerSalesTaxCodeRef">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ListID" type="xs:string" />
+                                <xs:element name="FullName" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="InvoiceLineRet">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="TxnLineID" type="xs:string" />
+                                <xs:element name="ItemRef">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ListID" type="xs:string" />
+                                      <xs:element name="FullName" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Desc" type="xs:string" />
+                                <xs:element name="Quantity" type="xs:unsignedByte" />
+                                <xs:element name="Rate" type="xs:decimal" />
+                                <xs:element name="Amount" type="xs:decimal" />
+                                <xs:element name="SalesTaxCodeRef">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ListID" type="xs:string" />
+                                      <xs:element name="FullName" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="requestID" type="xs:string" use="required" />
+                  <xs:attribute name="statusCode" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="statusSeverity" type="xs:string" use="required" />
+                  <xs:attribute name="statusMessage" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

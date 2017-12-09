@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="QBXML">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="QBXMLMsgsRq">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InvoiceAddRq">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="InvoiceAdd">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="CustomerRef">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ListID" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="TxnDate" type="xs:date" />
+                          <xs:element name="RefNumber" type="xs:unsignedShort" />
+                          <xs:element name="BillAddress">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Addr1" type="xs:string" />
+                                <xs:element name="City" type="xs:string" />
+                                <xs:element name="State" type="xs:string" />
+                                <xs:element name="PostalCode" type="xs:unsignedShort" />
+                                <xs:element name="Country" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="PONumber" />
+                          <xs:element name="Memo" />
+                          <xs:element maxOccurs="unbounded" name="InvoiceLineAdd">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ItemRef">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="FullName" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Desc" type="xs:string" />
+                                <xs:element name="Quantity" type="xs:unsignedByte" />
+                                <xs:element name="Rate" type="xs:unsignedShort" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="requestID" type="xs:unsignedByte" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="onError" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

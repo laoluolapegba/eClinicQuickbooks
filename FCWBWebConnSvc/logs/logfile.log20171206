@@ -1,0 +1,168 @@
+2017-12-06 19:51:48,702 [3] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = DF
+string qbXMLCountry = NG
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-06 19:51:59,904 [3] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005
+2017-12-06 19:52:09,153 [3] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 1
+2017-12-06 20:06:36,064 [6] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = afa
+string qbXMLCountry = NG
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-06 20:06:36,089 [6] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005
+2017-12-06 20:06:38,765 [6] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 1
+2017-12-06 20:11:10,650 [6] INFO  FCQBWebConnAPI.Model.Payment.QBPaymentAddRqModel [(null)] – Log debtorNo =800020FF-1457349121
+2017-12-06 21:06:08,919 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = asa
+string qbXMLCountry = NG
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-06 21:06:08,946 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005
+2017-12-06 21:06:10,933 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 1
+2017-12-06 21:06:38,697 [5] INFO  FCQBWebConnAPI.Model.Payment.QBPaymentAddRqModel [(null)] – Log debtorNo =800020FF-1457349121
+2017-12-06 21:31:37,117 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = 21
+string qbXMLCountry = CF
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-06 21:31:37,155 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005
+2017-12-06 21:31:40,489 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 1
+2017-12-06 21:32:21,324 [5] INFO  FCQBWebConnAPI.Model.Payment.QBPaymentAddRqModel [(null)] – Log debtorNo =800020FF-1457349121
+2017-12-06 21:34:25,454 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] –  arraylst count:0
+ RequestXML to QB = --++-- 
+
+2017-12-06 21:34:25,459 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – 
+ RequestXML to QB = --++-- 
+
+2017-12-06 21:47:35,088 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = as
+string qbXMLCountry = VF
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-06 21:47:35,122 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005
+2017-12-06 21:47:36,787 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 0
+2017-12-06 21:47:36,800 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] –  arraylst count:0
+ RequestXML to QB = --++-- 
+
+2017-12-06 21:47:36,812 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – 
+ RequestXML to QB = --++-- 
+
+2017-12-06 21:48:11,111 [6] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = as
+string qbXMLCountry = VF
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-06 21:48:11,123 [6] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005
+2017-12-06 21:48:47,885 [6] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 0
+2017-12-06 21:48:59,634 [6] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] –  arraylst count:0
+ RequestXML to QB = --++-- 
+
+2017-12-06 21:48:59,647 [6] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – 
+ RequestXML to QB = --++-- 
+
+2017-12-06 21:49:59,607 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = as
+string qbXMLCountry = NG
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-06 21:49:59,617 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005
+2017-12-06 21:52:05,869 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 0
+2017-12-06 21:52:09,741 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] –  arraylst count:0
+ RequestXML to QB = --++-- 
+
+2017-12-06 21:52:09,761 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – 
+ RequestXML to QB = --++-- 
+
+2017-12-06 21:52:19,715 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000006
+string strCompanyFileName = as
+string qbXMLCountry = NG
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000006
+
+2017-12-06 21:52:19,724 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000006
+2017-12-06 21:52:20,795 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 0
+2017-12-06 21:52:20,804 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] –  arraylst count:0
+ RequestXML to QB = --++-- 
+
+2017-12-06 21:52:20,814 [5] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – 
+ RequestXML to QB = --++-- 
+
+2017-12-06 21:52:51,355 [12] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = as
+string qbXMLCountry = NG
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-06 21:52:51,364 [12] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005
+2017-12-06 21:52:56,042 [12] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 0
+2017-12-06 21:52:56,057 [12] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] –  arraylst count:0
+ RequestXML to QB = --++-- 
+
+2017-12-06 21:52:56,066 [12] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – 
+ RequestXML to QB = --++-- 
+
+2017-12-06 21:54:13,539 [6] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000005
+string strCompanyFileName = as
+string qbXMLCountry = NG
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending requests for ticket id:201712011057080000005
+
+2017-12-06 21:54:13,547 [6] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000005

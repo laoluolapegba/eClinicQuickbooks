@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" ?>
+<QBXML>
+  <QBXMLMsgsRs>
+    <InvoiceAddRs requestID="SW52b2ljZUFkZHw1NA==" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+      <InvoiceRet>
+        <TxnID>773-1263566752</TxnID>
+        <TimeCreated>2010-01-15T09:45:52-05:00</TimeCreated>
+        <TimeModified>2010-01-15T09:45:52-05:00</TimeModified>
+        <EditSequence>1263566752</EditSequence>
+        <TxnNumber>396</TxnNumber>
+        <CustomerRef>
+          <ListID>90001-1263558758</ListID>
+          <FullName>Testy McTesterson</FullName>
+        </CustomerRef>
+        <ARAccountRef>
+          <ListID>3B0000-1211511979</ListID>
+          <FullName>Accounts Receivable</FullName>
+        </ARAccountRef>
+        <TemplateRef>
+          <ListID>D0000-1261262988</ListID>
+          <FullName>New Template</FullName>
+        </TemplateRef>
+        <TxnDate>2010-01-15</TxnDate>
+        <RefNumber>21011</RefNumber>
+        <BillAddress>
+          <Addr1>ConsoliBYTE, LLC</Addr1>
+          <Addr2>134 Stonemill Road</Addr2>
+          <City>Mansfield</City>
+          <State>CT</State>
+          <PostalCode>06268</PostalCode>
+          <Country>USA</Country>
+        </BillAddress>
+        <ShipAddress>
+          <Addr1>ConsoliBYTE, LLC</Addr1>
+          <Addr2>Attn: Keith Palmer</Addr2>
+          <Addr3>56 Cowles Road</Addr3>
+          <City>Willington</City>
+          <State>CT</State>
+          <PostalCode>06279</PostalCode>
+          <Country>USA</Country>
+        </ShipAddress>
+        <IsPending>false</IsPending>
+        <IsFinanceCharge>false</IsFinanceCharge>
+        <TermsRef>
+          <ListID>20000-1211066025</ListID>
+          <FullName>Net 30</FullName>
+        </TermsRef>
+        <DueDate>2010-02-14</DueDate>
+        <SalesRepRef>
+          <ListID>10000-1262427638</ListID>
+          <FullName>KRP</FullName>
+        </SalesRepRef>
+        <ShipDate>2010-01-15</ShipDate>
+        <Subtotal>15.00</Subtotal>
+        <ItemSalesTaxRef>
+          <ListID>10000-1211066051</ListID>
+          <FullName>Out of State</FullName>
+        </ItemSalesTaxRef>
+        <SalesTaxPercentage>0.00</SalesTaxPercentage>
+        <SalesTaxTotal>0.00</SalesTaxTotal>
+        <AppliedAmount>0.00</AppliedAmount>
+        <BalanceRemaining>15.00</BalanceRemaining>
+        <Memo>Test memo goes here.</Memo>
+        <IsPaid>false</IsPaid>
+        <IsToBePrinted>false</IsToBePrinted>
+        <CustomerSalesTaxCodeRef>
+          <ListID>10000-1211065841</ListID>
+          <FullName>Tax</FullName>
+        </CustomerSalesTaxCodeRef>
+        <InvoiceLineRet>
+          <TxnLineID>775-1263566752</TxnLineID>
+          <ItemRef>
+            <ListID>2B0007-1261281192</ListID>
+            <FullName>test</FullName>
+          </ItemRef>
+          <Desc>Test item description</Desc>
+          <Quantity>1</Quantity>
+          <Rate>15.00</Rate>
+          <Amount>15.00</Amount>
+          <SalesTaxCodeRef>
+            <ListID>10000-1211065841</ListID>
+            <FullName>Tax</FullName>
+          </SalesTaxCodeRef>
+        </InvoiceLineRet>
+      </InvoiceRet>
+    </InvoiceAddRs>
+  </QBXMLMsgsRs>
+</QBXML>

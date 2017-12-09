@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" ?>
+<QBXML>
+  <QBXMLMsgsRs>
+    <ReceivePaymentAddRs statusCode="INTTYPE" statusSeverity="STRTYPE" statusMessage="STRTYPE">
+      <ReceivePaymentRet>
+        <!-- optional -->
+        <TxnID >IDTYPE</TxnID>
+        <!-- optional -->
+        <TimeCreated >DATETIMETYPE</TimeCreated>
+        <!-- optional -->
+        <TimeModified >DATETIMETYPE</TimeModified>
+        <!-- optional -->
+        <EditSequence >STRTYPE</EditSequence>
+        <!-- optional -->
+        <TxnNumber >INTTYPE</TxnNumber>
+        <!-- optional -->
+        <CustomerRef>
+          <!-- optional -->
+          <ListID >IDTYPE</ListID>
+          <!-- optional -->
+          <FullName >STRTYPE</FullName>
+          <!-- optional -->
+        </CustomerRef>
+        <ARAccountRef>
+          <!-- optional -->
+          <ListID >IDTYPE</ListID>
+          <!-- optional -->
+          <FullName >STRTYPE</FullName>
+          <!-- optional -->
+        </ARAccountRef>
+        <TxnDate >DATETYPE</TxnDate>
+        <!-- optional -->
+        <RefNumber >STRTYPE</RefNumber>
+        <!-- optional -->
+        <TotalAmount >AMTTYPE</TotalAmount>
+        <!-- optional -->
+        <PaymentMethodRef>
+          <!-- optional -->
+          <ListID >IDTYPE</ListID>
+          <!-- optional -->
+          <FullName >STRTYPE</FullName>
+          <!-- optional -->
+        </PaymentMethodRef>
+        <Memo >STRTYPE</Memo>
+        <!-- optional -->
+        <DepositToAccountRef>
+          <!-- optional -->
+          <ListID >IDTYPE</ListID>
+          <!-- optional -->
+          <FullName >STRTYPE</FullName>
+          <!-- optional -->
+        </DepositToAccountRef>
+        <UnusedPayment >AMTTYPE</UnusedPayment>
+        <!-- optional -->
+        <UnusedCredits >AMTTYPE</UnusedCredits>
+        <!-- optional -->
+        <AppliedToTxnRet>
+          <!-- optional, may repeat -->
+          <TxnID >IDTYPE</TxnID>
+          <!-- required -->
+          <!-- TxnType may have one of the following values: ARRefundCreditCard, Bill, BillPaymentCheck, BillPaymentCreditCard, BuildAssembly, Charge, Check, CreditCardCharge, CreditCardCredit, CreditMemo, Deposit, Estimate, InventoryAdjustment, Invoice, ItemReceipt, JournalEntry, LiabilityAdjustment, Paycheck, PayrollLiabilityCheck, PurchaseOrder, ReceivePayment, SalesOrder, SalesReceipt, SalesTaxPaymentCheck, Transfer, VendorCredit, YTDAdjustment -->
+          <TxnType >ENUMTYPE</TxnType>
+          <!-- required -->
+          <TxnDate >DATETYPE</TxnDate>
+          <!-- optional -->
+          <RefNumber >STRTYPE</RefNumber>
+          <!-- optional -->
+          <BalanceRemaining >AMTTYPE</BalanceRemaining>
+          <!-- optional -->
+          <Amount >AMTTYPE</Amount>
+          <!-- optional -->
+          <DiscountAmount >AMTTYPE</DiscountAmount>
+          <!-- optional -->
+          <DiscountAccountRef>
+            <!-- optional -->
+            <ListID >IDTYPE</ListID>
+            <!-- optional -->
+            <FullName >STRTYPE</FullName>
+            <!-- optional -->
+          </DiscountAccountRef>
+        </AppliedToTxnRet>
+        <DataExtRet>
+          <!-- optional, may repeat -->
+          <OwnerID >GUIDTYPE</OwnerID>
+          <!-- optional -->
+          <DataExtName >STRTYPE</DataExtName>
+          <!-- required -->
+          <!-- DataExtType may have one of the following values: AMTTYPE, DATETIMETYPE, INTTYPE, PERCENTTYPE, PRICETYPE, QUANTYPE, STR1024TYPE, STR255TYPE -->
+          <DataExtType >ENUMTYPE</DataExtType>
+          <!-- required -->
+          <DataExtValue >STRTYPE</DataExtValue>
+          <!-- required -->
+        </DataExtRet>
+      </ReceivePaymentRet>
+    </ReceivePaymentAddRs>
+    <!--</QBXMLMsgsRq>
+</QBXML>-->
+  </QBXMLMsgsRs>
+</QBXML>

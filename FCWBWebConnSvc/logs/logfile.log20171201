@@ -1,0 +1,71 @@
+2017-12-01 15:01:49,855 [3] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000002
+string strCompanyFileName = C
+string qbXMLCountry = US
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending reqquests ticket id:201712011057080000002
+
+2017-12-01 15:01:53,250 [3] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000002
+2017-12-01 15:05:25,161 [3] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000002
+string strCompanyFileName = C
+string qbXMLCountry = US
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending reqquests ticket id:201712011057080000002
+
+2017-12-01 15:05:25,192 [3] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000002
+2017-12-01 15:05:31,055 [3] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 1
+2017-12-01 15:07:05,013 [3] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] –  arraylst count:0
+ RequestXML to QB = --++-- 
+
+2017-12-01 15:07:05,030 [3] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – 
+ RequestXML to QB = --++-- 
+
+2017-12-01 15:33:58,693 [13] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000002
+string strCompanyFileName = eqq
+string qbXMLCountry = NG
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending reqquests ticket id:201712011057080000002
+
+2017-12-01 15:33:58,728 [13] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000002
+2017-12-01 15:34:07,632 [13] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 1
+2017-12-01 15:34:26,467 [13] INFO  FCQBWebConnAPI.Model.QBInvoiceAddRqModel [(null)] – InvoiceAdd: cannot find trans with transid  9043 in eclinic DB. returning empty XML
+2017-12-01 15:34:34,276 [13] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] –  arraylst count:0
+ RequestXML to QB = --++-- 
+
+2017-12-01 15:34:34,289 [13] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – 
+ RequestXML to QB = --++-- 
+
+2017-12-01 15:37:05,462 [7] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – WebMethod: sendRequestXML() has been called by QBWebconnector
+
+Parameters received:
+string ticket = 201712011057080000002
+string strCompanyFileName = eqq
+string qbXMLCountry = NG
+int qbXMLMajorVers = 13
+int qbXMLMinorVers = 0
+
+getting pending reqquests ticket id:201712011057080000002
+
+2017-12-01 15:37:05,469 [7] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – inside getpendingRequests ticketid with ticket id = 201712011057080000002
+2017-12-01 15:37:06,946 [7] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – count of ticket = 1
+2017-12-01 15:37:06,955 [7] INFO  FCQBWebConnAPI.Model.QBInvoiceAddRqModel [(null)] – InvoiceAdd: cannot find trans with transid  9043 in eclinic DB. returning empty XML
+2017-12-01 15:37:06,960 [7] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] –  arraylst count:0
+ RequestXML to QB = --++-- 
+
+2017-12-01 15:37:06,965 [7] INFO  FCQBWebConnAPI.QBWebConnSvcSoap [(null)] – 
+ RequestXML to QB = --++-- 
+
