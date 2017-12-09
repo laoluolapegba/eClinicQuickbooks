@@ -111,7 +111,7 @@ namespace FCQBWebConnAPI
                     // An empty string for authReturn[1] means asking QBWebConnector 
                     // to connect to the company file that is currently openned in QB
                     string operationvalue = string.Empty;
-                    operationvalue = count < 1 ? "NONE" : "";
+                    operationvalue = count < 1 ? "NONE" : ""; 
                     authReturn.Add(operationvalue);
                     //authReturn.Add(ConfigurationManager.AppSettings["CompanyFileLocation"].ToString());
                     //"c:\\Program Files\\Intuit\\QuickBooks\\sample_product-based business.qbw";
