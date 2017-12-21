@@ -28,79 +28,96 @@ namespace FCQBWebConnAPI.Model
         {            
             
         }
-        public string WriteCustomerAddXml(string CustId, string jobId)
+        public ResponseObject WriteCustomerAddXml(string CustId, string jobId)
         {
-            db = new eClatModel();
-            var customer = (from e in db.patients
-                           where e.patient_id == CustId
-                           //where e.sync_flag == false
-                           select new CustomerAddViewModel
-                           {
-                               Name = e.surname,
-                               FirstName = e.forename,
-                               MiddleName = e.middle_name,
-                               LastName = e.surname,
-                               Salutation = e.title,
-                               IsActive = !e.inactive,
-                               Phone = e.phone,
-                               Email = e.email,
-                               Contact = e.nok_full_name                               
-                           }).FirstOrDefault();
-            if(customer == null)
-            {
-                log.Info(string.Format("CustomerAdd: cannot find patient with transid  {0} in eclinic DB. returning empty XML", CustId));
-                return string.Empty;
-            }
-            //Trim off Middlename to Initial only
-            if (customer.MiddleName != string.Empty)
-            {
-                customer.MiddleName = customer.MiddleName.Substring(0, 1);
-            }
-            //Trim off phone numbers
-            if (customer.Phone.Length > 11)
-            {
-                customer.Phone = customer.Phone.Substring(0, 11);
-            }
-            //StringBuilder strQXML = new StringBuilder();
             string strQXML = string.Empty;
-            BillAddress billAddy = new BillAddress();
-            billAddy.Addr1 = "1, Jane Doe Close";
-            billAddy.City = "Ikoyi";
-            billAddy.State = "Lagos";
-            billAddy.PostalCode = "23401";
-            CustomerAddRq Addreq = new CustomerAddRq();
-            Addreq.requestID = jobId;
-            customer.BillAddy = billAddy;
-            Addreq.CustAdd = customer;
-
-            QBXMLMsgsRq qbMsgReqs = new QBXMLMsgsRq();
-            qbMsgReqs.CustAddRq = Addreq;
-
-            //QBXML QBXmlObject = new QBXML();
-            //QBXmlObject.QBMsgsRq = qbMsgReqs;
-            // Create an instance of the XmlSerializer class;
-            // specify the type of object to serialize.
-            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-            ns.Add("", "");
-            XmlSerializer serializer =
-            new XmlSerializer(typeof(CustomerAddModel));
-
-            CustomerAddModel modl = new CustomerAddModel();
-            modl.QBMsgsRq = qbMsgReqs;
-            //StringWriter writer1 = new StringWriter();  //@"c:\temp\qbXml.xml"
-            // Serialize the model, and close the TextWriter.
-            using (StringWriter writer = new Utf8StringWriter())
+            ResponseObject rspObj = new ResponseObject();
+            try
             {
-                serializer.Serialize(writer, modl, ns);
-                strQXML = writer.ToString();
-            }
-            
-           
-            
-            //serializer.Serialize(writer, modl, ns);
-            //writer.Close();
+                db = new eClatModel();
+                var customer = (from e in db.patients
+                                where e.patient_id == CustId
+                                //where e.sync_flag == false
+                                select new CustomerAddViewModel
+                                {
+                                    Name = e.surname,
+                                    FirstName = e.forename,
+                                    MiddleName = e.middle_name,
+                                    LastName = e.surname,
+                                    Salutation = e.title,
+                                    IsActive = !e.inactive,
+                                    Phone = e.phone,
+                                    Email = e.email,
+                                    Contact = e.nok_full_name
+                                }).FirstOrDefault();
+                if (customer == null)
+                {
+                    string errorDesc = string.Format("CustomerAdd: cannot find patient with patientid  {0} in eclinic DB. returning empty XML", CustId);
+                    log.Info(errorDesc);
+                    rspObj.statusDesc = errorDesc;
+                    rspObj.statusCode = 1;
+                    return rspObj;
+                }
+                //Trim off Middlename to Initial only
+                if(customer.MiddleName != null)
+                {
+                    if (customer.MiddleName != string.Empty)
+                    {
+                        customer.MiddleName = customer.MiddleName.Substring(0, 1);
+                    }
+                }
+               
+                //Trim off phone numbers
+                if(customer.Phone != null)
+                {
+                    if (customer.Phone.Length > 11)
+                    {
+                        customer.Phone = customer.Phone.Substring(0, 11);
+                    }
+                }
+                else
+                {
+                    customer.Phone = "";
+                }
+                
+                BillAddress billAddy = new BillAddress();
+                billAddy.Addr1 = "1, Jane Doe Close";
+                billAddy.City = "Ikoyi";
+                billAddy.State = "Lagos";
+                billAddy.PostalCode = "23401";
+                CustomerAddRq Addreq = new CustomerAddRq();
+                Addreq.requestID = jobId;
+                customer.BillAddy = billAddy;
+                Addreq.CustAdd = customer;
 
-            return strQXML;
+                QBXMLMsgsRq qbMsgReqs = new QBXMLMsgsRq();
+                qbMsgReqs.CustAddRq = Addreq;
+
+                XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+                ns.Add("", "");
+                XmlSerializer serializer =
+                new XmlSerializer(typeof(CustomerAddModel));
+
+                CustomerAddModel modl = new CustomerAddModel();
+                modl.QBMsgsRq = qbMsgReqs;
+                //StringWriter writer1 = new StringWriter();  //@"c:\temp\qbXml.xml"
+                // Serialize the model, and close the TextWriter.
+                using (StringWriter writer = new Utf8StringWriter())
+                {
+                    serializer.Serialize(writer, modl, ns);
+                    strQXML = writer.ToString();
+                }
+                rspObj.statusXML = strQXML;
+            }
+            catch (Exception ex)
+            {
+                rspObj.statusDesc = ex.Message;
+                rspObj.statusCode = 99;
+                log.Error(ex.StackTrace, ex);
+            }
+
+            return rspObj;
+            
         }
         //[XmlRootAttribute("QBXML", IsNullable = false)]
         //public class QBXML

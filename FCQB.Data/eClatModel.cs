@@ -36,6 +36,7 @@ namespace FCQB.Data
         public virtual DbSet<items> items { get; set; }
         public virtual DbSet<errorlog> errorlogs { get; set; }
         public  virtual DbSet<qb_customers> qb_customers { get; set; }
+        public virtual DbSet<qb_settings> qb_settings { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             string schemaName = ConfigurationManager.AppSettings["SchemaName"];

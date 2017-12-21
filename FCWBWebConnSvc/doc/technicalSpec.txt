@@ -1,0 +1,32 @@
+﻿**********************************************
+tables
+----------
+qb_jobs
+qb_customers
+qb_settings
+qb_errors
+
+patients
+debtor_trans
+debtor_trans_details
+patients
+
+job types 
+-----------
+CustomerAdd = 1,
+InvoiceAdd = 2,
+PaymentAdd = 3,
+CustomerQuery = 4,
+BillAdd = 5
+
+error_codes
+---------------
+1 - transaction not found in debtor_Trans or patient id not found
+2 - patient upi not available in qb_customers, hence no ListId to post to QB. Customer must be created.
+3 - 
+
+job_status
+----------
+P = pending
+C = completed
+R = reprocess pending

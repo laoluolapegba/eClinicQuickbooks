@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="qb_settings.cs" />
     <Compile Include="qb_customers.cs" />
     <Compile Include="AppDbInitializer.cs" />
     <Compile Include="cust_allocations.cs" />

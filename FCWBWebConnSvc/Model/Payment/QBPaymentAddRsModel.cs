@@ -8,8 +8,9 @@ using System.Xml.Serialization;
 
 namespace FCQBWebConnAPI.Model.Payment
 {
+    [XmlRootAttribute("QBXML", IsNullable = false)]
     public class QBPaymentAddRsModel
-    {
+    { 
 
         [XmlElementAttribute("QBXMLMsgsRs", IsNullable = false)]
         public QBXMLPaymentMsgsRs QBPaymentMsgsRs;

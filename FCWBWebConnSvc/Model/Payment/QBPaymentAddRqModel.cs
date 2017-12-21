@@ -32,15 +32,22 @@ namespace FCQBWebConnAPI.Model.Payment
                                 upi = p.upi,
                                 patientId = p.patient_id
                             }).FirstOrDefault();
-
+                if (data == null)
+                {
+                    string errorDesc = string.Format("PaymentAdd: cannot find trans_no or patient UPI for trans_id {0} returning empty XML", InvoiceId);
+                    log.Info(errorDesc);
+                    rspObj.statusDesc = errorDesc;
+                    rspObj.statusCode = 1;
+                    return rspObj;
+                }
                 int custcount = db.qb_customers.Where(a => a.upi == data.upi).Count();
                 if(custcount < 1)
                 {
                     //Create the customer
                     JobHelper hlp = new JobHelper();
                     hlp.addJob(Services.JobType.CustomerAdd, data.patientId);
-                    rspObj.statusCode = 1;
-                    string errorDesc = string.Format("PaymentAdd: cannot upi {0} in qb_customer DB. returning empty XML", data.upi);
+                    rspObj.statusCode = 2;
+                    string errorDesc = string.Format("PaymentAdd: cannot find upi {0} in qb_customer. new customer job submitted. returning empty XML", data.upi);
                     log.Info(errorDesc);
                     rspObj.statusDesc = errorDesc;
                     return rspObj;
@@ -66,7 +73,7 @@ namespace FCQBWebConnAPI.Model.Payment
                     string errorDesc = string.Format("PaymentAdd: cannot find trans and ListID with transid  {0} in eclinic DB. returning empty XML", InvoiceId);
                     log.Info(errorDesc);
                     rspObj.statusDesc = errorDesc;
-                    rspObj.statusCode = 2;
+                    rspObj.statusCode = 3;
                     return rspObj;
                 }
                 var tmpinvoice = query.Select(e => new TmpPayAddModel
@@ -106,6 +113,7 @@ namespace FCQBWebConnAPI.Model.Payment
                 }
 
                 PaymentAddRq PayAddreq = new PaymentAddRq();
+                PayAddreq.requestID = jobId;
                 string debtorNo = invoice.CustomerNo.ListID;
 
                 invoice.CustomerNo = custref;
@@ -139,7 +147,7 @@ namespace FCQBWebConnAPI.Model.Payment
             {
                 rspObj.statusDesc = ex.Message;
                 rspObj.statusCode = 99;
-                log.Error(ex);
+                log.Error(ex.StackTrace, ex);
             }
 
             return rspObj;
@@ -163,8 +171,8 @@ namespace FCQBWebConnAPI.Model.Payment
     {
         [XmlElementAttribute("ReceivePaymentAdd", IsNullable = false)]
         public PaymentAddModel PaymentAdd;
-        //[XmlAttribute(AttributeName = "requestID")]
-        //public string requestID { get; set; }
+        [XmlAttribute(AttributeName = "requestID")]
+        public string requestID { get; set; }
     }
 
     public class PaymentAddModel

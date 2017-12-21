@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Xml.Serialization;
 
 namespace FCQBWebConnAPI
 {
@@ -16,5 +17,21 @@ namespace FCQBWebConnAPI
             statusDesc = "";
             statusXML = "";
         }
+    }
+    [XmlRootAttribute("RootNode", IsNullable = false)]
+    public class RootNode
+    {
+        [XmlElementAttribute("RspObj", IsNullable = false)]
+        public RspObj rspObj;
+    }
+    public class RspObj
+    {
+
+        [XmlAttribute(AttributeName = "requestID")]
+        public string requestID { get; set; }
+        [XmlAttribute(AttributeName = "statusCode")]
+        public string statusCode { get; set; }
+        [XmlAttribute(AttributeName = "statusSeverity")]
+        public string statusSeverity { get; set; }
     }
 }

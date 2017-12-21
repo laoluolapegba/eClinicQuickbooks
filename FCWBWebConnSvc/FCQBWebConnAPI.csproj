@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="HttpsWebService.qwc" />
+    <Content Include="doc\technicalSpec.txt" />
     <Content Include="Model\Customer\CustomerQuery.xml" />
     <Content Include="QBWebConnSvcSoap.svc" />
     <Content Include="qbXML\CustomerAddRs.xml">
@@ -141,6 +142,7 @@
     <Compile Include="Model\Utf8StringWriter.cs" />
     <Compile Include="Model\Vendor\VendorRef.cs" />
     <Compile Include="Model\Vendor\VendorAddress.cs" />
+    <Compile Include="Model\MsgSetResponse.cs" />
     <Compile Include="QBWebConnSvcSoap.svc.cs">
       <DependentUpon>QBWebConnSvcSoap.svc</DependentUpon>
     </Compile>

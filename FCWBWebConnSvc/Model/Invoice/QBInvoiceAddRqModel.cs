@@ -34,17 +34,35 @@ namespace FCQBWebConnAPI.Model
                                 upi = p.upi,
                                 patientId = p.patient_id
                             }).FirstOrDefault();
+                if (data == null)
+                {
+                    string errorDesc = string.Format("InvoiceAdd: cannot find trans_no or patient UPI for trans_id {0} returning empty XML", InvoiceId);
+                    log.Info(errorDesc);
+                    rspObj.statusDesc = errorDesc;
+                    rspObj.statusCode = 1;
+                    return rspObj;
+                }
                 int custcount = db.qb_customers.Where(a => a.upi == data.upi).Count();
                 if (custcount < 1)
                 {
                     //Create the customer
+                    //JobHelper hlp = new JobHelper();
+                    //hlp.addJob(Services.JobType.CustomerAdd, data.patientId);
+                    //rspObj.statusCode = 2;
+
                     JobHelper hlp = new JobHelper();
                     hlp.addJob(Services.JobType.CustomerAdd, data.patientId);
-                    rspObj.statusCode = 1;
+                    rspObj.statusCode = 2;
+                    string errorDesc = string.Format("InvoiceAdd: cannot find upi {0} in qb_customer. new customer job submitted. returning empty XML", data.upi);
+                    log.Info(errorDesc);
+                    rspObj.statusDesc = errorDesc;
+                    return rspObj;
+                    //return rspObj;
 
                 }
 
                 var query = (from e in db.debtor_trans
+                             join invd in db.debtor_trans_details on e.trans_token equals invd.debtor_trans_no
                              join p in db.patients on e.debtor_no equals p.upi
                              join qb in db.qb_customers on p.upi equals qb.upi
                              where e.trans_no == InvoiceId
@@ -53,7 +71,7 @@ namespace FCQBWebConnAPI.Model
                              {
                                  PONumber = e.order_,  //.ToString()
                                  RefNumber = e.reference,
-                                 Memo = e.reference,
+                                 Memo = invd.description,
                                  TxnDate = e.tran_date,                      //.ToString("yyyy-mm-dd")         
                                  DebtorNo = qb.ListID,
                              }).ToList();
@@ -62,7 +80,7 @@ namespace FCQBWebConnAPI.Model
                     string errorDesc = string.Format("InvoiceAdd: cannot find trans and ListID with transid  {0} in eclinic DB. returning empty XML", InvoiceId);
                     log.Info(errorDesc);
                     rspObj.statusDesc = errorDesc;
-                    rspObj.statusCode = 2;
+                    rspObj.statusCode = 3;
                     return rspObj;
                 }
                 var tmpinvoice = query.Select(e => new TmpInvAddModel
@@ -85,16 +103,18 @@ namespace FCQBWebConnAPI.Model
 
 
                 invoice.CustomerNo = custref;
+                var serviceItem = db.qb_settings.Where(a => a.companyid == 1).FirstOrDefault();
+
                 var itemdetails = (from inv in db.debtor_trans
                                        join invd in db.debtor_trans_details on inv.trans_token equals invd.debtor_trans_no
                                    //join x in db.items on invd.service_id equals x.itemid
                                    where inv.trans_no == InvoiceId
                                    select new OrderedItem
                                    {
-                                       ItemDescription = "eClinicBillItem",
+                                       ItemDescription = serviceItem.itemname,
                                        Quantity = 1,
                                        Rate = inv.ov_amount,
-                                       LineItem = new LineItemRef { FullName = "eClinicBillItem", ListID= "80000B97-1512806350" },
+                                       LineItem = new LineItemRef { FullName = serviceItem.itemname, ListID= serviceItem.itemlistid },
                                        //ItemDescription = invd.description,
                                        //Quantity = invd.quantity,
                                        //Rate = invd.unit_price,
@@ -153,7 +173,7 @@ namespace FCQBWebConnAPI.Model
             {
                 rspObj.statusDesc = ex.Message;
                 rspObj.statusCode = 99;
-                log.Error(ex);
+                log.Error(ex.StackTrace, ex);
             }
             
             return rspObj;
