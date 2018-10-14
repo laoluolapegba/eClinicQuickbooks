@@ -45,36 +45,43 @@ namespace FCQBWebConnAPI.Model
                 int custcount = db.qb_customers.Where(a => a.upi == data.upi).Count();
                 if (custcount < 1)
                 {
-                    //Create the customer
+                    //ver 1.2 14thOct 2018
+                    //Do not add customer Job for Invoice jobs where customer does not exists
                     //JobHelper hlp = new JobHelper();
                     //hlp.addJob(Services.JobType.CustomerAdd, data.patientId);
-                    //rspObj.statusCode = 2;
-
-                    JobHelper hlp = new JobHelper();
-                    hlp.addJob(Services.JobType.CustomerAdd, data.patientId);
                     rspObj.statusCode = 2;
-                    string errorDesc = string.Format("InvoiceAdd: cannot find upi {0} in qb_customer. new customer job submitted. returning empty XML", data.upi);
+                    string errorDesc = string.Format("InvoiceAdd: cannot find upi {0} in qb_customer. new customer job  will not be submitted. returning empty XML", data.upi);
                     log.Info(errorDesc);
                     rspObj.statusDesc = errorDesc;
                     return rspObj;
-                    //return rspObj;
+                    //
 
                 }
-
+                string patientAddress = db.patients.Where(a=>a.upi == data.upi).Select(a=>a.address).FirstOrDefault();
                 var query = (from e in db.debtor_trans
-                             join invd in db.debtor_trans_details on e.trans_token equals invd.debtor_trans_no
+                                 //join invd in db.debtor_trans_details on e.trans_token equals invd.debtor_trans_no
                              join p in db.patients on e.debtor_no equals p.upi
                              join qb in db.qb_customers on p.upi equals qb.upi
                              where e.trans_no == InvoiceId
                              //where e.sync_flag == false
                              select new
                              {
-                                 PONumber = e.order_,  //.ToString()
+                                 PONumber = e.trans_no,  //.ToString()
                                  RefNumber = e.reference,
-                                 Memo = invd.description,
+                                 Memo = "",// invd.description,
                                  TxnDate = e.tran_date,                      //.ToString("yyyy-mm-dd")         
                                  DebtorNo = qb.ListID,
                              }).ToList();
+                //TmpInvHeaderModel header = new TmpInvHeaderModel();
+                //foreach (var item in query)
+                //{
+                //    header.DebtorNo = item.DebtorNo;
+                //    header.RefNumber = item.RefNumber;
+                //    header.TxnDate = item.TxnDate;
+                //    header.Memo = header.Memo + ", " + item.Memo;
+                //    header.PONumber = item.PONumber;
+                //}
+
                 if (query.Count < 1)
                 {
                     string errorDesc = string.Format("InvoiceAdd: cannot find trans and ListID with transid  {0} in eclinic DB. returning empty XML", InvoiceId);
@@ -83,6 +90,7 @@ namespace FCQBWebConnAPI.Model
                     rspObj.statusCode = 3;
                     return rspObj;
                 }
+
                 var tmpinvoice = query.Select(e => new TmpInvAddModel
                 {
                     PONumber = e.PONumber,  //.ToString()
@@ -91,9 +99,18 @@ namespace FCQBWebConnAPI.Model
                     TxnDate = e.TxnDate.ToString("yyyy-MM-dd"),                     //.ToString("yyyy-mm-dd")  
                     DebtorNo = e.DebtorNo
                 }).FirstOrDefault();
+
+                //var tmpinvoice = query.Select(e => new TmpInvAddModel
+                //{
+                //    PONumber = e.PONumber,  //.ToString()
+                //    RefNumber = e.RefNumber,
+                //    Memo = e.Memo,
+                //    TxnDate = e.TxnDate.ToString("yyyy-MM-dd"),                     //.ToString("yyyy-mm-dd")  
+                //    DebtorNo = e.DebtorNo
+                //}).FirstOrDefault();
                 InvoiceAddModel invoice = new InvoiceAddModel();
-                invoice.PONumber = tmpinvoice.PONumber;
-                invoice.RefNumber = tmpinvoice.PONumber;
+                invoice.PONumber = tmpinvoice.PONumber.ToString();
+                invoice.RefNumber = tmpinvoice.PONumber.ToString();
                 invoice.Memo = tmpinvoice.Memo;
                 invoice.TxnDate = tmpinvoice.TxnDate;
 
@@ -112,15 +129,15 @@ namespace FCQBWebConnAPI.Model
                                    select new OrderedItem
                                    {
                                        ItemDescription = serviceItem.itemname,
-                                       Quantity = 1,
-                                       Rate = inv.ov_amount,
+                                       Quantity = invd.quantity,
+                                       Rate = invd.unit_price * (1 - invd.discount_percent / 100),  //   inv.ov_amount,
                                        LineItem = new LineItemRef { FullName = serviceItem.itemname, ListID= serviceItem.itemlistid },
-                                       //ItemDescription = invd.description,
+                                       Memo = invd.description + ", " + invd.description,
                                        //Quantity = invd.quantity,
                                        //Rate = invd.unit_price,
                                        //LineItem = new LineItemRef { FullName = invd.service_id },
                                    });
-
+                invoice.Memo = itemdetails.FirstOrDefault().Memo;
                
                 OrderedItem[] detailsList = itemdetails.ToArray();
                 invoice.InvoiceLineItems = detailsList;
@@ -131,10 +148,44 @@ namespace FCQBWebConnAPI.Model
                     rspObj.statusCode = 3;
                     return rspObj;
                 }
-                
+
                 BillAddress billAddy = new BillAddress();
-                billAddy.Addr1 = "1, Jane Doe Close";
-                billAddy.City = "Ikoyi";
+                if(!string.IsNullOrEmpty(patientAddress))
+                {
+                    if (patientAddress.Length > 0 && patientAddress.Length < 41)
+                    {
+                        billAddy.Addr1 = patientAddress.Substring(0, patientAddress.Length -1); ///its a zero based index
+                    }
+                    else
+                    { //greater than 41
+                        billAddy.Addr1 = patientAddress.Substring(0, 40);
+                    }
+                }
+                else //empty string
+                { billAddy.Addr1 = "-"; }
+                //if (patientAddress.Length > 39)
+                //{
+                //    billAddy.Addr1 = patientAddress.Substring(0, 40);
+                //    if (patientAddress.Length > 40)
+                //    {
+
+                //        if (patientAddress.Length > 79)
+                //        {
+                //            billAddy.Addr2 = patientAddress.Substring(40, 80);
+                //        }
+                //        else
+                //        {
+                //            billAddy.Addr2 = patientAddress.Substring(40, patientAddress.Length);
+                //        }
+                //    }
+                //    if (patientAddress.Length > 80)
+                //    {
+                //        billAddy.Addr3 = patientAddress.Substring(80, patientAddress.Length);
+                //    }
+                //}
+                //else
+                //    billAddy.Addr1 = patientAddress;
+                billAddy.City = "--";
                 billAddy.State = "Lagos";
                 billAddy.PostalCode = "23401";
                 billAddy.Country = "NG";
@@ -235,6 +286,8 @@ namespace FCQBWebConnAPI.Model
         public int Quantity;
         [XmlElementAttribute("Rate", Order = 4)]
         public double Rate;
+        [System.Xml.Serialization.XmlIgnore]
+        public string Memo { get; set; }
 
     }
 }

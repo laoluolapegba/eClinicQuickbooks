@@ -76,7 +76,7 @@ namespace FCQBWebConnAPI.Model.Bill
                              //where e.sync_flag == false
                              select new
                              {
-                                 PONumber = e.order_,  //.ToString()
+                                 PONumber = e.trans_no,  //.ToString()
                                  RefNumber = e.reference,
                                  Memo = invd.description,
                                  TxnDate = e.tran_date,                      //.ToString("yyyy-mm-dd")         
@@ -100,7 +100,7 @@ namespace FCQBWebConnAPI.Model.Bill
                     DebtorNo = e.DebtorNo
                 }).FirstOrDefault();
                 BillAddModel bill = new BillAddModel();
-                bill.RefNumber = tmpinvoice.PONumber;
+                bill.RefNumber = tmpinvoice.RefNumber;
                 bill.Memo = tmpinvoice.Memo;
                 bill.TxnDate = tmpinvoice.TxnDate;
 

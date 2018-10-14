@@ -40,7 +40,7 @@ namespace FCQBWebConnAPI.Model
                                 //where e.sync_flag == false
                                 select new CustomerAddViewModel
                                 {
-                                    Name = e.surname,
+                                    Name = e.surname, 
                                     FirstName = e.forename,
                                     MiddleName = e.middle_name,
                                     LastName = e.surname,
@@ -48,8 +48,12 @@ namespace FCQBWebConnAPI.Model
                                     IsActive = !e.inactive,
                                     Phone = e.phone,
                                     Email = e.email,
-                                    Contact = e.nok_full_name
+                                    //1Contact = e.nok_full_name,
+                                    AccountNumber = e.upi,
+                                    CardNo = e.card_number
+
                                 }).FirstOrDefault();
+                //e.forename + " " +  e.surname + " - " + e.card_number, 
                 if (customer == null)
                 {
                     string errorDesc = string.Format("CustomerAdd: cannot find patient with patientid  {0} in eclinic DB. returning empty XML", CustId);
@@ -58,17 +62,22 @@ namespace FCQBWebConnAPI.Model
                     rspObj.statusCode = 1;
                     return rspObj;
                 }
+                string tempname = (customer.LastName + " " +  customer.FirstName + " " + customer.MiddleName +"-"+ customer.CardNo); //.Substring(0, 28);
+
+                customer.Name = (tempname.Length > 28 ? tempname.Substring(0, 27) : tempname); // + customer.CardNo;
+                
                 //Trim off Middlename to Initial only
-                if(customer.MiddleName != null)
+                if (customer.MiddleName != null)
                 {
                     if (customer.MiddleName != string.Empty)
                     {
                         customer.MiddleName = customer.MiddleName.Substring(0, 1);
                     }
                 }
-               
+                string tempcontact = customer.LastName + " " + customer.FirstName + " " + customer.MiddleName;
+                //customer.Contact = (tempcontact.Length > 40 ? tempcontact.Substring(0, 40) : tempcontact);
                 //Trim off phone numbers
-                if(customer.Phone != null)
+                if (customer.Phone != null)
                 {
                     if (customer.Phone.Length > 11)
                     {
@@ -79,16 +88,40 @@ namespace FCQBWebConnAPI.Model
                 {
                     customer.Phone = "";
                 }
-                
+                string patientAddress = db.patients.Where(a => a.patient_id == CustId).Select(a => a.address).FirstOrDefault();
+
                 BillAddress billAddy = new BillAddress();
-                billAddy.Addr1 = "1, Jane Doe Close";
-                billAddy.City = "Ikoyi";
+                if (patientAddress.Length > 39)
+                {
+                    billAddy.Addr1 = patientAddress.Substring(0, 40);
+                    if (patientAddress.Length > 40)
+                    {
+
+                        if (patientAddress.Length > 79)
+                        {
+                            billAddy.Addr2 = patientAddress.Substring(40, 80);
+                        }
+                        else
+                        {
+                            billAddy.Addr2 = patientAddress.Substring(40, patientAddress.Length);
+                        }
+                    }
+                    if (patientAddress.Length > 80)
+                    {
+                        billAddy.Addr3 = patientAddress.Substring(80, patientAddress.Length);
+                    }
+                }
+                else
+                    billAddy.Addr1 = patientAddress;
+
+                billAddy.City = "--";
                 billAddy.State = "Lagos";
                 billAddy.PostalCode = "23401";
                 CustomerAddRq Addreq = new CustomerAddRq();
                 Addreq.requestID = jobId;
                 customer.BillAddy = billAddy;
                 Addreq.CustAdd = customer;
+                //Addreq.CustAdd.
 
                 QBXMLMsgsRq qbMsgReqs = new QBXMLMsgsRq();
                 qbMsgReqs.CustAddRq = Addreq;
@@ -166,8 +199,13 @@ namespace FCQBWebConnAPI.Model
             public string Phone { get; set; }
             [XmlElement(ElementName = "Email", Order = 9)]
             public string Email { get; set; }
-            [XmlElement(ElementName = "Contact", Order = 10)]
-            public string Contact { get; set; }
+            //[XmlElement(ElementName = "Contact", Order = 10)]
+            //public string Contact { get; set; }
+            //[System.Xml.Serialization.XmlIgnore]
+            [XmlElement(ElementName = "AccountNumber", Order = 10)]
+            public string AccountNumber { get; set; }
+            [System.Xml.Serialization.XmlIgnore]
+            public string CardNo { get; set; }
         }
         
        

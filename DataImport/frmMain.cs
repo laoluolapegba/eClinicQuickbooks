@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using log4net;
 using CsvHelper;
-using System.IO;
 using CsvHelper.Configuration;
 using Ganss.Excel;
 using FCQB.Data;
@@ -68,7 +67,7 @@ namespace DataImport
 
 
 
-            string pause = "jhgjjjhjhj";
+           // string pause = "jhgjjjhjhj";
             //int index = input.IndexOf("statusMessage");
 
             //if (index > 0)

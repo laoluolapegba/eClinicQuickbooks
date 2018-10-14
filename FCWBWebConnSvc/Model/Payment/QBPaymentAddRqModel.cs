@@ -61,8 +61,8 @@ namespace FCQBWebConnAPI.Model.Payment
                              //where e.sync_flag == false
                              select new
                              {
-                                 PONumber = e.order_,  //.ToString()  //laolu should change to transno
-                                 RefNumber = e.trans_no,
+                                 PONumber = e.trans_no,  //.ToString()  //laolu should change to transno
+                                 RefNumber = e.reference,
                                  Memo = e.clinic_token,
                                  TxnDate = e.tran_date,                      //.ToString("yyyy-mm-dd")         
                                  DebtorNo = qb.ListID,
@@ -86,7 +86,7 @@ namespace FCQBWebConnAPI.Model.Payment
                     TotalAmount = e.TotalAmount
                 }).FirstOrDefault();
                 PaymentAddModel invoice = new PaymentAddModel();                
-                invoice.RefNumber = tmpinvoice.PONumber;
+                invoice.RefNumber = tmpinvoice.PONumber.ToString();
                 invoice.Memo = tmpinvoice.Memo;
                 invoice.TxnDate = tmpinvoice.TxnDate;
                 invoice.TotalAmount = string.Format("{0:0.00}", tmpinvoice.TotalAmount); //tmpinvoice.TotalAmount;

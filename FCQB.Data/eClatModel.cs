@@ -148,25 +148,7 @@ namespace FCQB.Data
                 .Property(e => e.address)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<patient>()
-                .Property(e => e.ethnicity)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.religion)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.occupation)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.education)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.government)
-                .IsUnicode(false);
+            
 
             modelBuilder.Entity<patient>()
                 .Property(e => e.phone)
@@ -176,66 +158,8 @@ namespace FCQB.Data
                 .Property(e => e.email)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<patient>()
-                .Property(e => e.alcohol)
-                .IsUnicode(false);
 
-            modelBuilder.Entity<patient>()
-                .Property(e => e.smoking)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.past_medical_conditions)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.drug_allergy)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.family_history)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.past_surgeries)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.cardiac_history)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.menstral_duration)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.menstral_regularity)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.menstral_flow)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.menstral_pain)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.medications)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.notes)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.marital_status)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.origin_country)
-                .IsUnicode(false);
-
+            
             modelBuilder.Entity<patient>()
                 .Property(e => e.hmo)
                 .IsUnicode(false);
@@ -264,66 +188,7 @@ namespace FCQB.Data
                 .Property(e => e.patient_department)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<patient>()
-                .Property(e => e.bloodgroup)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.genotype)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.nok_full_name)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.nok_relationship)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.nok_phone)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.nok_address)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.immunization_llin)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.immunization_deworming)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.immunization_vitamin_A)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.mortality_type)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.mortality_reason)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.parity)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.postcoital_bleeding)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.menarche_age)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<patient>()
-                .Property(e => e.menopause_age)
-                .IsUnicode(false);
-
+            
             modelBuilder.Entity<patient>()
                 .Property(e => e.assigned_user_id)
                 .IsUnicode(false);

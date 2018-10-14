@@ -878,7 +878,7 @@ namespace FCQBWebConnAPI
                 var patient = db.patients.Where(a => a.patient_id == patientId).FirstOrDefault();
 
                 qb_customers entity = new qb_customers();
-                entity.Name = patient.surname + " " + patient.middle_name + " " + patient.forename;
+                entity.Name = patient.surname + " " + patient.forename + " " + patient.middle_name;
                 entity.ListID = qbListId;
                 entity.IsActive = "1";
                 entity.FullName = patient.surname;
@@ -1210,6 +1210,7 @@ namespace FCQBWebConnAPI
             ResponseObject rspObj;
             try
             {
+                PreProcessing();
                 int pendingCount = db.qb_jobs.Where(a => a.job_status == "P").Where(a => a.qb_ticket_id == ticketId.Trim()).Count();
                 log.Info("number of 'P' tickets = " + pendingCount);
                 if (pendingCount > 0)
@@ -1226,7 +1227,7 @@ namespace FCQBWebConnAPI
                             {
                                 
                                 case (int)JobType.CustomerAdd:
-                                    CustomerAddModel modl = new CustomerAddModel();
+                                     CustomerAddModel modl = new CustomerAddModel();
                                     rspObj = modl.WriteCustomerAddXml(item.trans_id, item.jobid.ToString());
                                     
                                     if (rspObj.statusCode == 0)
@@ -1259,7 +1260,7 @@ namespace FCQBWebConnAPI
                                     }
                                     else
                                     {
-                                        UpdateQJobStatusAs(item.jobid, rspObj.statusCode, rspObj.statusDesc, "");
+                                        //UpdateQJobStatusAs(item.jobid, rspObj.statusCode, rspObj.statusDesc, "");
                                     }
                                     break;
                                 case (int)JobType.PaymentAdd:
@@ -1283,7 +1284,7 @@ namespace FCQBWebConnAPI
                                     else
                                     {
                                         
-                                        UpdateQJobStatusAs(item.jobid, rspObj.statusCode, rspObj.statusDesc, "");
+                                        //UpdateQJobStatusAs(item.jobid, rspObj.statusCode, rspObj.statusDesc, "");
                                     }
                                     break;
                                 case (int)JobType.CustomerQuery:
@@ -1394,6 +1395,58 @@ namespace FCQBWebConnAPI
             //        //strRequestXML = strRequestXML.Replace(QBXML, qbXMLHeader);
             //        //req.Add(strRequestXML);
             //    }
+        }
+
+        /// <summary>
+        /// Update items to be reprocessed to P from R if and only if there are no pending CustomerAdd jobs
+        /// </summary>
+        private void PreProcessing()
+        {
+            try
+            {
+                log.Info("Started Preprocessing...");
+                if (CountPendingJobs(JobType.CustomerAdd))
+                {
+                    log.Info("Nothing to update...");
+                    return;
+                }
+                    
+                else
+                {
+                    using (var dbup = new eClatModel())
+                    {
+                        var pendingjobs = dbup.qb_jobs.Where(a => a.job_status == "R").ToList();
+                        log.Info( pendingjobs.Count + " items to be updated...");
+                        foreach (var item in pendingjobs)
+                        {
+                            item.job_status = "P";
+                            dbup.qb_jobs.Attach(item);
+                            dbup.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                        }
+                        dbup.SaveChanges();
+                    }
+                }
+                log.Info("Ended Preprocessing...");
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+            }
+        }
+        private bool CountPendingJobs(JobType jobType)
+        {
+            int pendingCount = 0;
+            try
+            {
+                int jobtype = (int)jobType;
+                pendingCount = db.qb_jobs.Where(a => a.job_status == "R").Where(a => a.job_type == jobtype).Count();
+                
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+            }
+            return pendingCount > 0;
         }
         private void serializer_UnknownNode(object sender, XmlNodeEventArgs e)
         {

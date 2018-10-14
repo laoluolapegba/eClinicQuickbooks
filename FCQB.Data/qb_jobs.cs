@@ -38,5 +38,6 @@ namespace FCQB.Data
         public string iterator { get; set; }
         public string fromname { get; set; }
         public string toname { get; set; }
+        public DateTime? created_date { get; set; }
     }
 }
