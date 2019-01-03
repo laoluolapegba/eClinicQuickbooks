@@ -2,7 +2,9 @@
 using FCQB.Data;
 using FCQBWebConnAPI.Model;
 using FCQBWebConnAPI.Model.Bill;
+using FCQBWebConnAPI.Model.ItemInventory;
 using FCQBWebConnAPI.Model.Payment;
+using FCQBWebConnAPI.Model.ServiceInventory;
 using FCQBWebConnAPI.Services;
 using log4net;
 using System;
@@ -49,6 +51,8 @@ namespace FCQBWebConnAPI
         QBPaymentAddRsModel.QBXMLPaymentMsgsRs qbPayMsgs;
         QBCustomerQueryRsModel.QBCustQrXMLMsgsRs qbCustQMsgs;
         QBBillAddRsModel.QBXMLBillMsgsRs qbBillMsgs;
+        QBItemAddRsModel.QBXMLMsgsRs qbItemMsgs;
+        QBServiceAddRsModel.QBXMLMsgsRs qbServiceMsgs;
         #endregion
 
         #region Constructor
@@ -99,20 +103,24 @@ namespace FCQBWebConnAPI
                     log.Info("Authenticated with user :" + authUserName);
                     int count = db.qb_jobs.Where(a => a.job_status == "P" && a.retry_count < Maxretries).Count();
                     log.Info(string.Format(" {0} items pending ", count));
+                    string companyfileLoc = ConfigurationManager.AppSettings["CompanyFileLocation"].ToString();
+                    string qbTicket = System.Guid.NewGuid().ToString();
                     if (count < 1)
                     {
-                        authReturn.Add(System.Guid.NewGuid().ToString());
+                        authReturn.Add(qbTicket);
+                        authReturn.Add(companyfileLoc);
                     }
                     else
                     {
-                        string qbTicket = System.Guid.NewGuid().ToString();
+                        
                         authReturn.Add(qbTicket);
+                        authReturn.Add(companyfileLoc);
 
                         //string qbTicket = db.qb_jobs.Where(a => a.job_status == "P" && a.retry_count < Maxretries).OrderBy(x => x.jobid);
                             //.Select(y => y.qb_ticket_id).FirstOrDefault();
                         //authReturn.Add(qbTicket);
                     }
-
+                    log.Info(string.Format(" authreturn0 {0} authreturn1 {1}", authReturn[0].ToString(), authReturn[1].ToString()));
                     // An empty string for authReturn[1] means asking QBWebConnector 
                     // to connect to the company file that is currently openned in QB
                     string operationvalue = string.Empty;
@@ -123,14 +131,14 @@ namespace FCQBWebConnAPI
                 }
                 else
                 {
-                    log.Info(string.Format(" Authentication failed for {0}", authUserName));
+                    log.Info(string.Format(" Authentication failed for {0} {1} {2}", authUserName , request.Body.strPassword, request.Body.strUserName));
                     string operationvalue = "NVU";
                     authReturn.Add(operationvalue);
                 }
             }
             catch (Exception ex)
             {
-                log.Error("Error occured in web service : " + ex.StackTrace);
+                log.Error("Error occured in web service : " + ex.Message + ex.StackTrace);
             }
 
             // You could also return "none" to indicate there is no work to do
@@ -347,11 +355,13 @@ namespace FCQBWebConnAPI
                     RootNode rspObj = GetResponseType(request.Body.response);
                     int responseType = 0;
                     long requestID = 0;
-                    if (rspObj.rspObj != null)
+                    if(rspObj != null)
                     {
-                        log.Info("Serialized Responseobject from response header");
-                        //if (rspObj.rspObj.statusCode == "0")
-                        //{
+                        if (rspObj.rspObj != null)
+                        {
+                            log.Info("Serialized Responseobject from response header");
+                            //if (rspObj.rspObj.statusCode == "0")
+                            //{
                             requestID = long.Parse(rspObj.rspObj.requestID);
                             log.Info("response requestID = " + requestID);
                             var currentResponse = db.qb_jobs.Where(a => a.jobid == requestID).FirstOrDefault();
@@ -365,8 +375,10 @@ namespace FCQBWebConnAPI
                                 log.Info("failed to retrieve requestID from db :" + requestID);
                             }
 
-                       // }
+                            // }
+                        }
                     }
+                    
 
                     //var currentResponse = db.qb_jobs.Where(a => a.jobid == long.Parse(Msgresponse.tranId)).FirstOrDefault();
                     switch (responseType)
@@ -377,60 +389,76 @@ namespace FCQBWebConnAPI
                             //temporary response file :
                             //StreamReader sr = new StreamReader(@"F:\LaoluOlapegba\Myprojects\femi\FCWBWebConnSvc\FCWBWebConnSvc\qbXML\CustomerAddRs.xml");
                             //get the deserilized response object
-                            CustomerAddRsModel responseObject = modl.ReadCustomerAddRsXml(request.Body.response);
+                            CustomerAddRsModel responseObject = null;
+                            try
+                            {
+                                responseObject = modl.ReadCustomerAddRsXml(request.Body.response);
+                            }
+                            catch (Exception spex)
+                            {
+                                log.Error("Error reading customerAdd response XML :" + spex.StackTrace);
+                            }
+
+                            qbMsgs = responseObject.QBMsgsRs;
+
+                                CustomerAddRs rsAttributes = qbMsgs.CustAddRs;
+                                CustomerAddRsViewModel custRetNode = rsAttributes.CustAddRs;
+                                System.Text.StringBuilder logMessage = new System.Text.StringBuilder();
+                                if (rsAttributes != null) // always true ?
+                                {
+                                    //get the status Code, info and Severity
+                                    int retStatusCode = rsAttributes.statusCode;
+                                    string retStatusSeverity = rsAttributes.statusSeverity;
+                                    string retStatusMessage = rsAttributes.statusMessage;
+                                    logMessage.Append("CustomerAdd response codes :" + "\r\n\r\n");
+                                    logMessage.AppendFormat("statusCode = {0}, statusSeverity = {1}, statusMessage = {2}",
+                                        retStatusCode, retStatusSeverity, retStatusMessage);
+                                    string qbrecordId = string.Empty;
+                                    if (custRetNode != null)
+                                    {
+                                        //get the CustomerRet node for detailed info
+                                        logMessage.AppendFormat("\r\nCustomer ListID = {0}", custRetNode.ListID);
+                                        logMessage.AppendFormat("\r\nCustomer Name = {0}", custRetNode.Name);
+                                        logMessage.AppendFormat("\r\nCustomer FullName = {0}", custRetNode.FullName);
+
+                                        logMessage.AppendFormat("\r\retStatusCode = {0}", retStatusCode);
+                                        qbrecordId = custRetNode.ListID;
+                                        evLogTxt = evLogTxt + logMessage;
+                                    }
+                                    
+                                    //log.Info(logMessage);
+                                    //Treat
+                                    ///update the status of the transaction
+                                    ///
+                                    if (retStatusCode == 0 || retStatusMessage == "Status OK")
+                                    {
+                                        log.Info(string.Format("\r\n inserting new customer ticketid {0}, qbrecordid {1} requestid {2}", 
+                                            request.Body.ticket, qbrecordId, requestID));
+                                        UpdateCustomerAddJob(request.Body.ticket, qbrecordId, requestID);
+                                        log.Info("\r\n inserted new customer ");
+                                    }
+                                    else
+                                    {
+                                        log.Info("\r\n saving last error ");
+                                        saveLastError(retStatusCode, retStatusMessage, request.Body.ticket);
+                                    }
+                                    log.Info("attempting to update requestID1 :" + requestID);
+                                    UpdateQJobStatusAs(requestID, retStatusCode, retStatusMessage, qbrecordId);
+                                    log.Info("updated requestID :" + requestID + " with statusCode" + retStatusCode);
+
+                                }
+                                else
+                                {
+                                    log.Info("attempting to update requestID2 :" + requestID);
+                                    UpdateQJobStatusAs(requestID, int.Parse(rspObj.rspObj.statusCode), "", "");
+                                    log.Info("updated requestID :" + requestID + " with statusCode" + rspObj.rspObj.statusCode);
+                                }
+                            
+                            
 
                             //close the temp file
                             //sr.Close();
 
-                            qbMsgs = responseObject.QBMsgsRs;
-                            CustomerAddRs rsAttributes = qbMsgs.CustAddRs;
-                            CustomerAddRsViewModel custRetNode = rsAttributes.CustAddRs;
-                            System.Text.StringBuilder logMessage = new System.Text.StringBuilder();
-                            if (rsAttributes != null) // always true ?
-                            {
-                                //get the status Code, info and Severity
-                                int retStatusCode = rsAttributes.statusCode;
-                                string retStatusSeverity = rsAttributes.statusSeverity;
-                                string retStatusMessage = rsAttributes.statusMessage;
-                                logMessage.Append("CustomerAdd response codes :" + "\r\n\r\n");
-                                logMessage.AppendFormat("statusCode = {0}, statusSeverity = {1}, statusMessage = {2}",
-                                    retStatusCode, retStatusSeverity, retStatusMessage);
-                                string qbrecordId = string.Empty;
-                                if (custRetNode != null)
-                                {
-                                    //get the CustomerRet node for detailed info
-                                    logMessage.AppendFormat("\r\nCustomer ListID = {0}", custRetNode.ListID);
-                                    logMessage.AppendFormat("\r\nCustomer Name = {0}", custRetNode.Name);
-                                    logMessage.AppendFormat("\r\nCustomer FullName = {0}", custRetNode.FullName);
-
-                                    qbrecordId = custRetNode.ListID;
-                                    evLogTxt = evLogTxt + logMessage;
-                                }
-
-
-                                //log.Info(logMessage);
-                                //Treat
-                                ///update the status of the transaction
-                                ///
-                                if (retStatusCode == 0)
-                                {
-                                    UpdateCustomerAddJob(request.Body.ticket, qbrecordId);
-                                }
-                                else
-                                {
-                                    saveLastError(retStatusCode, retStatusMessage, request.Body.ticket);
-                                }
-                                log.Info("attempting to update requestID1 :" + requestID);
-                                UpdateQJobStatusAs(requestID, retStatusCode, retStatusMessage, qbrecordId);
-                                log.Info("updated requestID :" + requestID + " with statusCode" + retStatusCode);
-
-                            }
-                            else
-                            {
-                                log.Info("attempting to update requestID2 :" + requestID);
-                                UpdateQJobStatusAs(requestID, int.Parse(rspObj.rspObj.statusCode), "", "");
-                                log.Info("updated requestID :" + requestID + " with statusCode" + rspObj.rspObj.statusCode);
-                            }
                             
                             break;
                         #endregion
@@ -704,6 +732,134 @@ namespace FCQBWebConnAPI
                                 log.Info("updated requestID :" + requestID + " with statusCode" + rspObj.rspObj.statusCode);
                             }
                             break;
+                        #endregion
+
+                        #region ItemInventoryAdd
+                        case (int)JobType.ItemAdd:
+                            QBItemAddRsModel itemrsmodl = new QBItemAddRsModel();
+                            //temporary response file :
+                            //StreamReader sr = new StreamReader(@"F:\LaoluOlapegba\Myprojects\femi\FCWBWebConnSvc\FCWBWebConnSvc\qbXML\CustomerAddRs.xml");
+                            //get the deserilized response object
+                            QBItemAddRsModel itemresponseObject = itemrsmodl.ReadItemAddRsXml(request.Body.response);
+
+                            //close the temp file
+                            //sr.Close();
+
+                            qbItemMsgs = itemresponseObject.QBMsgsRs;
+                            QBItemAddRsModel.ItemInventoryAddRs itemrsAttributes = qbItemMsgs.ItemAddRs;
+                            QBItemAddRsModel.ItemAddRetModel itemRetNode = itemrsAttributes.ItemAdd;
+                            System.Text.StringBuilder logItmMessage = new System.Text.StringBuilder();
+                            if (itemrsAttributes != null) // always true ?
+                            {
+                                //get the status Code, info and Severity
+                                int retStatusCode = itemrsAttributes.statusCode;
+                                string retStatusSeverity = itemrsAttributes.statusSeverity;
+                                string retStatusMessage = itemrsAttributes.statusMessage;
+                                logItmMessage.Append("ItemAdd response codes :" + "\r\n\r\n");
+                                logItmMessage.AppendFormat("statusCode = {0}, statusSeverity = {1}, statusMessage = {2}",
+                                    retStatusCode, retStatusSeverity, retStatusMessage);
+                                string qbrecordId = string.Empty;
+                                if (itemRetNode != null)
+                                {
+                                    //get the CustomerRet node for detailed info
+                                    logItmMessage.AppendFormat("\r\n Item ListID = {0}", itemRetNode.ListID);
+                                    logItmMessage.AppendFormat("\r\n Item Name = {0}", itemRetNode.Name);
+
+
+                                    qbrecordId = itemRetNode.ListID;
+                                    evLogTxt = evLogTxt + logItmMessage;
+                                }
+
+
+                                //log.Info(logMessage);
+                                //Treat
+                                ///update the status of the transaction
+                                ///
+                                if (retStatusCode == 0)
+                                {
+                                    UpdateInventoryAddJob(request.Body.ticket, qbrecordId, "item", requestID);
+                                }
+                                else
+                                {
+                                    saveLastError(retStatusCode, retStatusMessage, request.Body.ticket);
+                                }
+                                log.Info("attempting to update requestID1 :" + requestID);
+                                UpdateQJobStatusAs(requestID, retStatusCode, retStatusMessage, qbrecordId);
+                                log.Info("updated requestID :" + requestID + " with statusCode" + retStatusCode);
+
+                            }
+                            else
+                            {
+                                log.Info("attempting to update requestID2 :" + requestID);
+                                UpdateQJobStatusAs(requestID, int.Parse(rspObj.rspObj.statusCode), "", "");
+                                log.Info("updated requestID :" + requestID + " with statusCode" + rspObj.rspObj.statusCode);
+                            }
+
+                            break;
+                        #endregion
+
+                        #region ItemServiceAdd
+                        case (int)JobType.ServiceAdd:
+                            QBServiceAddRsModel svcrsmodl = new QBServiceAddRsModel();
+                            //temporary response file :
+                            //StreamReader sr = new StreamReader(@"F:\LaoluOlapegba\Myprojects\femi\FCWBWebConnSvc\FCWBWebConnSvc\qbXML\CustomerAddRs.xml");
+                            //get the deserilized response object
+                            QBServiceAddRsModel svcresponseObject = svcrsmodl.ReadServiceAddRsXml(request.Body.response);
+
+                            //close the temp file
+                            //sr.Close();
+
+                            qbServiceMsgs = svcresponseObject.QBMsgsRs;
+                            QBServiceAddRsModel.ServiceInventoryAddRs svcrsAttributes = qbServiceMsgs.ServiceAddRs;
+                            QBServiceAddRsModel.ServiceAddRetModel svcRetNode = svcrsAttributes.ItemAdd;
+                            System.Text.StringBuilder logSvcMessage = new System.Text.StringBuilder();
+                            if (svcrsAttributes != null) // always true ?
+                            {
+                                //get the status Code, info and Severity
+                                int retStatusCode = svcrsAttributes.statusCode;
+                                string retStatusSeverity = svcrsAttributes.statusSeverity;
+                                string retStatusMessage = svcrsAttributes.statusMessage;
+                                logSvcMessage.Append("SvcAdd response codes :" + "\r\n\r\n");
+                                logSvcMessage.AppendFormat("statusCode = {0}, statusSeverity = {1}, statusMessage = {2}",
+                                    retStatusCode, retStatusSeverity, retStatusMessage);
+                                string qbrecordId = string.Empty;
+                                if (svcRetNode != null)
+                                {
+                                    //get the CustomerRet node for detailed info
+                                    logSvcMessage.AppendFormat("\r\n Service ListID = {0}", svcRetNode.ListID);
+                                    logSvcMessage.AppendFormat("\r\n Service Name = {0}", svcRetNode.Name);
+
+
+                                    qbrecordId = svcRetNode.ListID;
+                                    evLogTxt = evLogTxt + logSvcMessage;
+                                }
+
+
+                                //log.Info(logMessage);
+                                //Treat
+                                ///update the status of the transaction
+                                ///
+                                if (retStatusCode == 0)
+                                {
+                                    UpdateInventoryAddJob(request.Body.ticket, qbrecordId, "service", requestID);
+                                }
+                                else
+                                {
+                                    saveLastError(retStatusCode, retStatusMessage, request.Body.ticket);
+                                }
+                                log.Info("attempting to update requestID1 :" + requestID);
+                                UpdateQJobStatusAs(requestID, retStatusCode, retStatusMessage, qbrecordId);
+                                log.Info("updated requestID :" + requestID + " with statusCode" + retStatusCode);
+
+                            }
+                            else
+                            {
+                                log.Info("attempting to update requestID2 :" + requestID);
+                                UpdateQJobStatusAs(requestID, int.Parse(rspObj.rspObj.statusCode), "", "");
+                                log.Info("updated requestID :" + requestID + " with statusCode" + rspObj.rspObj.statusCode);
+                            }
+
+                            break;
                             #endregion
                     }
                     //MsgSetResponse responseMsgSet = new MsgSetResponse();
@@ -768,33 +924,36 @@ namespace FCQBWebConnAPI
                 if(responseXML != "")
                 {
                     //remove everything before requestID
-                    string xml = responseXML.Substring(responseXML.IndexOf("requestID"));
-
-                    xml = responseXML.Substring(responseXML.IndexOf("requestID"));
-
-
-                    //Remove everything after statusMessage
-                    int resultIndex = xml.IndexOf("statusMessage");
-                    if (resultIndex != -1)
+                    string xml = string.Empty;
+                    int indexofrequestId = responseXML.IndexOf("requestID");
+                    if(indexofrequestId >= 0)
                     {
-                        xml = xml.Substring(0, resultIndex);
+                        xml = responseXML.Substring(responseXML.IndexOf("requestID"));
+
+                        //Remove everything after statusMessage
+                        int resultIndex = xml.IndexOf("statusMessage");
+                        if (resultIndex != -1)
+                        {
+                            xml = xml.Substring(0, resultIndex);
+                        }
+                        xml = Regex.Unescape(xml);
+                        xml = xml.Replace(@"\", "");
+
+                        //xmlHeader = @"<? xml version ="1.0" ?>";
+                        xml = "<RootNode> <RspObj " + xml + "></RspObj> </RootNode>";
+                        xml.Replace("\\\"", "\"");
+
+                        //string xml2 = File.ReadAllText(@"c:\u01\rspxml2.txt");
+                        XmlSerializer serializer = new XmlSerializer(typeof(RootNode));
+                        serializer.UnknownNode += new
+                        XmlNodeEventHandler(serializer_UnknownNode);
+                        serializer.UnknownAttribute += new
+                        XmlAttributeEventHandler(serializer_UnknownAttribute);
+                        StringReader sr = new StringReader(xml);
+
+                        responseObject = (RootNode)serializer.Deserialize(sr);
                     }
-                    xml = Regex.Unescape(xml);
-                    xml = xml.Replace(@"\", "");
-
-                    //xmlHeader = @"<? xml version ="1.0" ?>";
-                    xml = "<RootNode> <RspObj " + xml + "></RspObj> </RootNode>";
-                    xml.Replace("\\\"", "\"");
-
-                    //string xml2 = File.ReadAllText(@"c:\u01\rspxml2.txt");
-                    XmlSerializer serializer = new XmlSerializer(typeof(RootNode));
-                    serializer.UnknownNode += new
-                    XmlNodeEventHandler(serializer_UnknownNode);
-                    serializer.UnknownAttribute += new
-                    XmlAttributeEventHandler(serializer_UnknownAttribute);
-                    StringReader sr = new StringReader(xml);
                     
-                    responseObject = (RootNode)serializer.Deserialize(sr);
                     
                 }
                
@@ -850,7 +1009,7 @@ namespace FCQBWebConnAPI
             //}
         }
 
-        private void UpdateCustomerAddJob(string ticketId, string qbListId)
+        private void UpdateCustomerAddJob(string ticketId, string qbListId, long requestID)
         {
 
             //var transaction = db.qb_jobs.Where(a => a.qb_ticket_id == ticketId).FirstOrDefault();
@@ -873,7 +1032,7 @@ namespace FCQBWebConnAPI
             //}
             try
             {
-                var transaction = db.qb_jobs.Where(a => a.qb_ticket_id == ticketId).FirstOrDefault();
+                var transaction = db.qb_jobs.Where(a => a.jobid == requestID).FirstOrDefault();
                 string patientId = transaction.trans_id;
                 var patient = db.patients.Where(a => a.patient_id == patientId).FirstOrDefault();
 
@@ -897,7 +1056,7 @@ namespace FCQBWebConnAPI
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message, ex);
+                log.Error("error saving qb_cust" + ex.Message, ex);
             }
                 //DateTime.ParseExact(item.TimeCreated, "yyyy-MM-dd'T'HH:mm:sszzz", CultureInfo.InvariantCulture);
 
@@ -906,8 +1065,65 @@ namespace FCQBWebConnAPI
                 //Convert.ToDateTime(item.TimeModified);
 
         }
+        private void UpdateInventoryAddJob(string ticketId, string qbListId, string inventoryType, long requestID)
+        {
 
-        private void UpdateBillAddJob(string ticketId, string qbrecordId)
+            
+            try
+            {
+                if(inventoryType == "service")
+                {
+                    var transaction = db.qb_jobs.Where(a => a.jobid == requestID).FirstOrDefault();
+                    int itemId = int.Parse(transaction.trans_id);
+                    var dbitem = db.debtor_trans_details.Where(a => a.id == itemId).FirstOrDefault();
+
+                    qb_item entity = new qb_item();
+                    entity.Name = dbitem.description;// + " " + dbitem.service_name;
+                    entity.ListID = qbListId;
+                    entity.ItemId = dbitem.bill_item_type + dbitem.bill_item_id;
+                    entity.IsActive = "1";
+                    entity.Balance = "0";
+                    entity.EditSequence = "";
+                    entity.TimeCreated = DateTime.Now;
+                    entity.TotalBalance = "";
+
+                    db.qb_items.Add(entity);
+                }
+                else
+                {
+                    var transaction = db.qb_jobs.Where(a => a.jobid == requestID).FirstOrDefault();
+                    int itemId = int.Parse(transaction.trans_id);
+                    var dbitem = db.debtor_trans_details.Where(a => a.id == itemId).FirstOrDefault();
+
+                    qb_item entity = new qb_item();
+                    entity.Name = dbitem.description;
+                    entity.ItemId = dbitem.bill_item_type + dbitem.bill_item_id;
+                    entity.ListID = qbListId;
+                    entity.IsActive = "1";
+                    entity.Balance = "0";
+                    entity.EditSequence = "";
+                    entity.TimeCreated = DateTime.Now;
+                    entity.TotalBalance = "";
+
+                    db.qb_items.Add(entity);
+                }
+                
+
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+            }
+            //DateTime.ParseExact(item.TimeCreated, "yyyy-MM-dd'T'HH:mm:sszzz", CultureInfo.InvariantCulture);
+
+
+            //DateTime.ParseExact(item.TimeModified, "yyyy-MM-dd'T'HH:mm:sszzz", CultureInfo.InvariantCulture);
+            //Convert.ToDateTime(item.TimeModified);
+
+        }
+
+        private void UpdateBillAddJob(string ticketId, string qbrecordId, long requestID)
         {
             //var transaction = db.qb_jobs.Where(a => a.qb_ticket_id == ticketId).FirstOrDefault();
             //if (transaction == null)
@@ -977,8 +1193,12 @@ namespace FCQBWebConnAPI
                 {
                     transaction.error_code = statusCode.ToString();
                     transaction.error_description = statusDesc;
-                    transaction.job_status = "C";
-                    if(statusCode == 2) { transaction.job_status = "R"; }
+                    if(statusCode == 0)
+                    {
+                        transaction.job_status = "C";
+                    }
+                    //
+                    //if(statusCode == 2) { transaction.job_status = "R"; }
                     //context.Entry(local).State = EntityState.Detached;
                     _dml.qb_jobs.Attach(transaction);
                     _dml.Entry(transaction).State = System.Data.Entity.EntityState.Modified;
@@ -1260,7 +1480,7 @@ namespace FCQBWebConnAPI
                                     }
                                     else
                                     {
-                                        //UpdateQJobStatusAs(item.jobid, rspObj.statusCode, rspObj.statusDesc, "");
+                                        UpdateQJobStatusAs(item.jobid, rspObj.statusCode, rspObj.statusDesc, "");
                                     }
                                     break;
                                 case (int)JobType.PaymentAdd:
@@ -1284,7 +1504,7 @@ namespace FCQBWebConnAPI
                                     else
                                     {
                                         
-                                        //UpdateQJobStatusAs(item.jobid, rspObj.statusCode, rspObj.statusDesc, "");
+                                        UpdateQJobStatusAs(item.jobid, rspObj.statusCode, rspObj.statusDesc, "");
                                     }
                                     break;
                                 case (int)JobType.CustomerQuery:
@@ -1307,6 +1527,46 @@ namespace FCQBWebConnAPI
                                     log.Info(string.Format("calling WriteBillAddXml with {0} , {1} :",
                                         item.jobid, item.trans_id));
                                     rspObj = billmodl.WriteBillAddXml(int.Parse(item.trans_id), item.jobid.ToString());
+                                    //strRequestXML = billmodl.WriteBillAddXml(long.Parse(item.trans_id), item.jobid.ToString());
+                                    if (rspObj.statusCode == 0)
+                                    {
+                                        strRequestXML = rspObj.statusXML;
+                                        if (strRequestXML != string.Empty)
+                                        {
+                                            strRequestXML = strRequestXML.Replace(QBXML, qbXMLHeader);
+                                            req.Add(strRequestXML);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        UpdateQJobStatusAs(item.jobid, rspObj.statusCode, rspObj.statusDesc, "");
+                                    }
+                                    break;
+                                case (int)JobType.ItemAdd:
+                                    QBItemAddRqModel itemmodl = new QBItemAddRqModel();
+                                    log.Info(string.Format("calling WriteItemInventoryAddXml with job id  {0} , transid {1} :",
+                                        item.jobid, item.trans_id));
+                                    rspObj = itemmodl.WriteItemInventoryAddXml(item.trans_id, item.jobid.ToString());
+                                    //strRequestXML = billmodl.WriteBillAddXml(long.Parse(item.trans_id), item.jobid.ToString());
+                                    if (rspObj.statusCode == 0)
+                                    {
+                                        strRequestXML = rspObj.statusXML;
+                                        if (strRequestXML != string.Empty)
+                                        {
+                                            strRequestXML = strRequestXML.Replace(QBXML, qbXMLHeader);
+                                            req.Add(strRequestXML);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        UpdateQJobStatusAs(item.jobid, rspObj.statusCode, rspObj.statusDesc, "");
+                                    }
+                                    break;
+                                case (int)JobType.ServiceAdd:
+                                    QBServiceAddRqModel svcmodl = new QBServiceAddRqModel();
+                                    log.Info(string.Format("calling WriteServiceInventoryAddXml with job id  {0} , transid {1} :",
+                                        item.jobid, item.trans_id));
+                                    rspObj = svcmodl.WriteServiceInventoryAddXml(item.trans_id, item.jobid.ToString());
                                     //strRequestXML = billmodl.WriteBillAddXml(long.Parse(item.trans_id), item.jobid.ToString());
                                     if (rspObj.statusCode == 0)
                                     {

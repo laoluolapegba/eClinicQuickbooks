@@ -19,6 +19,12 @@ namespace FCQB.Data
         public  int companyid { get; set; }
         public string itemlistid { get; set; }
         public string itemname { get; set; }
+        public string sales_account { get; set; }
+        public string cogs_account { get; set; }
+        public string inventory_account { get; set; }
+        public string adjustment_account { get; set; }
+        public string assembly_account { get; set; }
+        //sales_account, cogs_account, inventory_account, adjustment_account, assembly_account
 
     }
 }

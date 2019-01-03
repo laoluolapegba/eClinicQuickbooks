@@ -44,8 +44,9 @@ namespace FCQBWebConnAPI.Model.Payment
                 if(custcount < 1)
                 {
                     //Create the customer
-                    JobHelper hlp = new JobHelper();
-                    hlp.addJob(Services.JobType.CustomerAdd, data.patientId);
+                    //Do not add customer Job for Invoice jobs where customer does not exists
+                    //JobHelper hlp = new JobHelper();
+                    //hlp.addJob(Services.JobType.CustomerAdd, data.patientId);
                     rspObj.statusCode = 2;
                     string errorDesc = string.Format("PaymentAdd: cannot find upi {0} in qb_customer. new customer job submitted. returning empty XML", data.upi);
                     log.Info(errorDesc);

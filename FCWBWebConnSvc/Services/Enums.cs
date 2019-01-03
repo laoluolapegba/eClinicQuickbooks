@@ -17,6 +17,8 @@ namespace FCQBWebConnAPI.Services
         InvoiceAdd = 2,
         PaymentAdd = 3,
         CustomerQuery = 4,
-        BillAdd = 5
+        BillAdd = 5,
+        ItemAdd = 100,
+        ServiceAdd = 101
     }
 }

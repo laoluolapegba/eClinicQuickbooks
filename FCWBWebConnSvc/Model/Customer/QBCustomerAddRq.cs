@@ -91,28 +91,41 @@ namespace FCQBWebConnAPI.Model
                 string patientAddress = db.patients.Where(a => a.patient_id == CustId).Select(a => a.address).FirstOrDefault();
 
                 BillAddress billAddy = new BillAddress();
-                if (patientAddress.Length > 39)
+                if (!string.IsNullOrEmpty(patientAddress))
                 {
-                    billAddy.Addr1 = patientAddress.Substring(0, 40);
-                    if (patientAddress.Length > 40)
+                    if (patientAddress.Length > 0 && patientAddress.Length < 41)
                     {
-
-                        if (patientAddress.Length > 79)
-                        {
-                            billAddy.Addr2 = patientAddress.Substring(40, 80);
-                        }
-                        else
-                        {
-                            billAddy.Addr2 = patientAddress.Substring(40, patientAddress.Length);
-                        }
+                        billAddy.Addr1 = patientAddress.Substring(0, patientAddress.Length - 1); ///its a zero based index
                     }
-                    if (patientAddress.Length > 80)
-                    {
-                        billAddy.Addr3 = patientAddress.Substring(80, patientAddress.Length);
+                    else
+                    { //greater than 41
+                        billAddy.Addr1 = patientAddress.Substring(0, 40);
                     }
                 }
-                else
-                    billAddy.Addr1 = patientAddress;
+                else //empty string
+                { billAddy.Addr1 = "-"; }
+                //if (patientAddress.Length > 39)
+                //{
+                //    billAddy.Addr1 = patientAddress.Substring(0, 40);
+                //    if (patientAddress.Length > 40)
+                //    {
+
+                //        if (patientAddress.Length > 79)
+                //        {
+                //            billAddy.Addr2 = patientAddress.Substring(40, 80);
+                //        }
+                //        else
+                //        {
+                //            billAddy.Addr2 = patientAddress.Substring(40, patientAddress.Length);
+                //        }
+                //    }
+                //    if (patientAddress.Length > 80)
+                //    {
+                //        billAddy.Addr3 = patientAddress.Substring(80, patientAddress.Length);
+                //    }
+                //}
+                //else
+                //    billAddy.Addr1 = patientAddress;
 
                 billAddy.City = "--";
                 billAddy.State = "Lagos";

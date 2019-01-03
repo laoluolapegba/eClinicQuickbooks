@@ -32,7 +32,7 @@ namespace FCQB.Data
         [StringLength(100)]
         public string service_id { get; set; }
 
-        public bool? is_packaged { get; set; }
+        public string is_packaged { get; set; }
 
         [Column(TypeName = "tinytext")]
         [StringLength(255)]
@@ -63,5 +63,18 @@ namespace FCQB.Data
         public bool? sync_mode { get; set; }
 
         public DateTime? sync_date { get; set; }
+        public string bill_item_type { get; set; }
+        public string bill_item_id { get; set; }
+        public string ext_bill_list_id { get; set; }
+
+        public bool inactive { get; set; }
+        public string sales_account { get; set; }
+        public string cogs_account { get; set; }
+        public string inventory_account { get; set; }
+        public string adjustment_account { get; set; }
+        public string assembly_account         { get; set; }
+
+        
+
     }
 }

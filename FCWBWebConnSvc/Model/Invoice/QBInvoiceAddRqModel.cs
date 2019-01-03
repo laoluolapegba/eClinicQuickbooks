@@ -26,6 +26,23 @@ namespace FCQBWebConnAPI.Model
             
             try
             {
+
+                var invdata = (from inv in db.debtor_trans
+                               join invd in db.debtor_trans_details on inv.trans_token equals invd.debtor_trans_no
+                               where inv.trans_no == InvoiceId
+                               select new
+                                {
+                                    det = invd.debtor_trans_no
+                                }).FirstOrDefault();
+                if (invdata == null)
+                {
+                    string errorDesc = string.Format("InvoiceAdd: cannot find debtor_trans_details for trans_id {0} returning empty XML", InvoiceId);
+                    log.Info(errorDesc);
+                    rspObj.statusDesc = errorDesc;
+                    rspObj.statusCode = 1;
+                    return rspObj;
+                }
+
                 var data = (from inv in db.debtor_trans
                             join p in db.patients on inv.debtor_no equals p.upi
                             where inv.trans_no == InvoiceId
@@ -120,19 +137,75 @@ namespace FCQBWebConnAPI.Model
 
 
                 invoice.CustomerNo = custref;
-                var serviceItem = db.qb_settings.Where(a => a.companyid == 1).FirstOrDefault();
+                //get the item code , ListId and name
+                //bool ItemExists = db.items.Any(a => a.itemid == "");
+                //if(!ItemExists)
+                //{
+                //    string errorDesc = string.Format("InvoiceAdd: cannot find ListID for itemCode {0} in eclinic DB. returning empty XML", InvoiceId);
+                //    log.Info(errorDesc);
+                //    rspObj.statusDesc = errorDesc;
+                //    rspObj.statusCode = 7;
+                //    return rspObj;
+                //}
+                //var serviceItem = db.qb_settings.Where(a => a.companyid == 1).FirstOrDefault();
+
+
+                //check if any of the items doesnt have an itemcode
+                var itemsonInvoice = (from inv in db.debtor_trans
+                              join invd in db.debtor_trans_details on inv.trans_token equals invd.debtor_trans_no
+                              where inv.trans_no == InvoiceId
+                              select new
+                              {
+                                  itemcode = invd.bill_item_type + invd.bill_item_id,
+                                  ListId = invd.ext_bill_list_id,
+                                  BillItemType = invd.bill_item_type
+                              }).ToList();
+                //int invalidItemCodes = 0;
+                //ext_bill_list_id
+                //debtor_trans_details.bill_item_type + debtor_trans_details.bill_item_id
+                foreach (var item in itemsonInvoice)
+                {
+                    //int cnt = db.qb_items.Where(a => a.itemid == item.itemcode).Count();
+                    int cnt = db.qb_items.Where(a => a.ItemId == item.itemcode).Count();
+                    if (cnt < 1)
+                    {
+
+                        //not found, so submit job and exit
+                        //JobHelper hlp = new JobHelper();
+                        //if (item.BillItemType == "service")
+                        //{
+                        //    hlp.addJob(Services.JobType.ServiceAdd, item.itemcode);
+                        //}
+                        //else
+                        //{
+                            
+                        //    hlp.addJob(Services.JobType.ItemAdd, item.itemcode);
+                        //}
+                        
+
+                        //invalidItemCodes++;
+                        string errorDesc = string.Format("InvoiceAdd: cannot find ListID for itemCode {0} in eclinic DB qb_items. returning empty XML", item.itemcode);
+                        log.Info(errorDesc);
+                        rspObj.statusDesc = errorDesc;
+                        rspObj.statusCode = 7;
+                        return rspObj;
+                    }
+                }
+                //if debtor_trans_details.bill_item_type == 'service'
 
                 var itemdetails = (from inv in db.debtor_trans
                                        join invd in db.debtor_trans_details on inv.trans_token equals invd.debtor_trans_no
-                                   //join x in db.items on invd.service_id equals x.itemid
+                                       join x in db.qb_items on invd.bill_item_type + invd.bill_item_id equals x.ItemId
+                                       //on invd.ext_bill_list_id equals x.ListID
                                    where inv.trans_no == InvoiceId
                                    select new OrderedItem
                                    {
-                                       ItemDescription = serviceItem.itemname,
+                                       ItemDescription = x.Name, // serviceItem.itemname,
                                        Quantity = invd.quantity,
                                        Rate = invd.unit_price * (1 - invd.discount_percent / 100),  //   inv.ov_amount,
-                                       LineItem = new LineItemRef { FullName = serviceItem.itemname, ListID= serviceItem.itemlistid },
-                                       Memo = invd.description + ", " + invd.description,
+                                       //LineItem = new LineItemRef { FullName = serviceItem.itemname, ListID= serviceItem.itemlistid },
+                                       LineItem = new LineItemRef { FullName = x.Name, ListID = x.ListID},
+                                       Memo =  invd.description //+ "-" + invd.service_id,
                                        //Quantity = invd.quantity,
                                        //Rate = invd.unit_price,
                                        //LineItem = new LineItemRef { FullName = invd.service_id },

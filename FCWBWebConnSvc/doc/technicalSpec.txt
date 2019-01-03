@@ -10,6 +10,8 @@ patients
 debtor_trans
 debtor_trans_details
 patients
+qb_coas
+items
 
 job types 
 -----------
@@ -17,7 +19,9 @@ CustomerAdd = 1,
 InvoiceAdd = 2,
 PaymentAdd = 3,
 CustomerQuery = 4,
-BillAdd = 5
+BillAdd = 5,
+ItemAdd = 100
+ServiceAdd = 101
 
 error_codes
 ---------------

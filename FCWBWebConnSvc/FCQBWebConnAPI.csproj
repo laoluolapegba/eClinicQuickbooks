@@ -126,6 +126,10 @@
     <Compile Include="Model\InvoiceLineRet.cs" />
     <Compile Include="Model\ItemRef.cs" />
     <Compile Include="Model\ItemSalesTaxRef.cs" />
+    <Compile Include="Model\ServiceInventory\QBServiceAddRsModel.cs" />
+    <Compile Include="Model\ServiceInventory\QBServiceAddRqModel.cs" />
+    <Compile Include="Model\ItemInventory\QBItemAddRqModel.cs" />
+    <Compile Include="Model\ItemInventory\QBItemAddRsModel.cs" />
     <Compile Include="Model\OrderedItem.cs" />
     <Compile Include="Model\Customer\QBCustomerAddRs.cs" />
     <Compile Include="Model\Customer\QBCustomerAddRq.cs" />

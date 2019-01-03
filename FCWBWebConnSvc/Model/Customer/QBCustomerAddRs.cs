@@ -26,6 +26,7 @@ namespace FCQBWebConnAPI.Model
         
         public CustomerAddRsModel ReadCustomerAddRsXml(string strResponseXml)
         {
+
             // Create an instance of the XmlSerializer class;
             // specify the type of object to be deserialized.
             XmlSerializer serializer = new XmlSerializer(typeof(CustomerAddRsModel));

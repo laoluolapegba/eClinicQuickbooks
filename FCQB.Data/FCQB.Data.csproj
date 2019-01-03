@@ -58,6 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="qb_coas.cs" />
+    <Compile Include="service.cs" />
+    <Compile Include="qb_items.cs" />
     <Compile Include="qb_settings.cs" />
     <Compile Include="qb_customers.cs" />
     <Compile Include="AppDbInitializer.cs" />
@@ -67,7 +70,7 @@
     <Compile Include="eClatModel.cs" />
     <Compile Include="errorlog.cs" />
     <Compile Include="FormattedDbEntityValidationException.cs" />
-    <Compile Include="items.cs" />
+    <Compile Include="item.cs" />
     <Compile Include="patient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="qb_jobs.cs" />

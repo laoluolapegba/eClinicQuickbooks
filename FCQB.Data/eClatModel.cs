@@ -33,10 +33,13 @@ namespace FCQB.Data
         public virtual DbSet<debtor_trans_details> debtor_trans_details { get; set; }
         public virtual DbSet<patient> patients { get; set; }
         public virtual DbSet<qb_jobs> qb_jobs { get; set; }
-        public virtual DbSet<items> items { get; set; }
+        public virtual DbSet<item> items { get; set; }
+        public virtual DbSet<service> services { get; set; }
         public virtual DbSet<errorlog> errorlogs { get; set; }
         public  virtual DbSet<qb_customers> qb_customers { get; set; }
         public virtual DbSet<qb_settings> qb_settings { get; set; }
+        public virtual  DbSet<qb_item> qb_items { get; set; }
+        public virtual DbSet<qb_coas> qb_coas { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             string schemaName = ConfigurationManager.AppSettings["SchemaName"];
